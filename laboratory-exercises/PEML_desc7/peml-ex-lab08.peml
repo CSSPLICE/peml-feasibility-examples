@@ -1,0 +1,256 @@
+title: Building a Gradebook
+external_id: peml-ex-lab08
+is_public: true
+experience: 25
+language_list: Java
+
+license.id: cc-sa-4.0
+license.owner.email: edwards@cs.vt.edu
+license.owner.name: Stephen Edwards
+
+tags.topics: class, functions
+tags.style: coding problem
+
+instructions:----------
+Goal
+----
+
+In this lab, you are going to develop a pair of classes that work together to represent a rudimentary gradebook. One class will represent a student's individual information, while another will represent the entire class.
+
+Learning Objectives
+-------------------
+
+*   Exposure to cooperating objects
+*   Exposure to writing constructors
+*   Familiarity with fields
+*   Familiarity with object state
+*   Familiarity with creating new classes
+*   Familiarity with writing test cases
+*   Mastery of while loops
+*   Mastery of the Web-CAT Grader
+
+Part A: Modeling Student Information
+------------------------------------
+
+In Part A of this lab assignment, you will begin write a `Student` class that records information about a students assignment scores.
+
+Decide which of you will be the **driver** for Part A. The driver should log in. For the remaining instructions in Part A, the driver should do all the typing/mousing. The driver should feel free to ask for advice or bounce ideas off the navigator, and the navigator should look out for errors in what the driver is typing.
+
+### Procedure
+
+1.  **Create a class called `Student`**
+    
+    1.  Start BlueJ on your lab machine and create a new project for this lab assignment.
+        
+    2.  Create a new class called `Student` using the "New Class" button and the "**Bare Class**" template.
+        
+    3.  Give your new class **three fields**: a string to hold the student's name, an `int` to hold the number of assignments completed, and an `int` to hold the total number of points earned on all assignments so far.
+        
+    4.  Add a **constructor** to your class that takes a single parameter representing the student's name:
+        
+            public Student( _/\* use one String parameter \*/_ )
+            {
+                _// initialize your fields here_
+            }
+        
+        The initial values for all three fields should be assigned in the body of the constructor.
+        
+    5.  Compile your class, fixing any errors.
+        
+    6.  Create a student object on the object bench. Enter your name as the parameter value when prompted.
+        
+    7.  Right-click your student object and choose "Inspect". Confirm that all fields are set to values that you intend.
+        
+2.  **Write an accessor method**
+    
+    1.  Add the following method to your class:
+        
+            public String name()
+            {
+                _// return this student's name_
+            }
+        
+        Implement this **accessor** method so that it returns the name stored in this object.
+        
+3.  **Set up a test class**
+    
+    1.  Create a test class for `Student`.
+        
+    2.  Set up a test fixture that includes two newly created student objects--one with your name and one with your partner's name (you can use just first names if you like). You can use "Object Bench to Test Fixture" or write the code directly into your test class.
+        
+    3.  Add a test case that confirms that the names of both student objects are stored correctly by using your accessor method.
+        
+4.  **Write mutator methods**
+    
+    1.  So far, your new class can hold some basic information, but there is no way to change a `Student`'s information once it has been created. Add the following **mutator** method:
+        
+            public void setName( _/\* use one String parameter \*/_ )
+            {
+                _// change this student's name_
+            }
+        
+        Implement this mutator method.
+        
+    2.  Add a couple of test cases for your new mutator to your test class. You can type them directly in the test class yourself, or record them interactively.
+        
+    3.  Add a second **mutator**method:
+        
+            public void addAssignment( _/\* use one int parameter \*/_ )
+            {
+                _// update point total and assignment count_
+            }
+        
+        This method takes the score on a single assignment as a parameter and "records" this assignment grade for this student by updating the other two fields.
+        
+5.  **Write one more accessor to retrieve score information**
+    
+    1.  Add one more accessor called `assignmentAverage()` that returns an `int`\-valued average of all assignment scores recorded for this student. Because we are using integer arithmetic, the resulting average will be truncated (rounded down, that is) if the average is not a whole number.
+        
+    2.  Write test cases for both `addAssignment()` and `assignmentAverage()`, run your tests, and fix any errors.
+        
+    3.  Discuss with your partner whether you have tested all the aspects of these two methods, adding any additional tests you can think of.
+        
+6.  **Printing student information in human-readable form**
+    
+    1.  Create a student object on the object bench. Take note of the name you give this object (by default, it will be something like "student1" unless you request something different).
+        
+    2.  From BlueJ's main menu, select the View->Show Text Evaluation Area... menu entry. At the Evaluate: prompt, type this (substituting your object's name as appropriate):
+        
+        System.out.println( student1 );
+        
+        Hit enter. What comes out on the terminal window? Is it what you expect?
+        
+    3.  It would be much nicer if printing your student object gave a more useful result, say, giving the student's name and the student's assignment average like this:
+        
+        Antoinette (89)
+        
+        To accomplish this, add another accessor method to your class:
+        
+            public String toString()
+            {
+                _// return a string representation of your object_
+            }
+        
+        Implement the body of `toString()` so that it returns a string formed by concatenating the student's name and the student's assignment average in the format shown above.
+        
+    4.  After recompiling, add a student to the object bench and try printing it again. Every object responds to the `toString()` message, although the default behavior just prints the class name and a hexidecimal object address in memory. By creating our own definition, student objects now have a more readable string representation. Java uses `toString()` automatically when printing out an object's value, or when concatenating an object with a longer string.
+        
+    5.  Write or record a test case for `toString()`. Compile, run all tests, and fix all errors.
+        
+7.  **Submit your solution**
+    
+    1.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", open the CS 1705 Labs category, and select "Lab 08a". Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    2.  Fix any errors, warnings, or suggestions that are indicated in the analysis of your submission. For Part A, all of the score is automatically generated, so you won't have to wait for TA comments on Part A later.
+        
+
+Part B: Collecting Students in a Gradebook
+------------------------------------------
+
+In Part B of this lab assignment, you will add a second class called `GradeBook`. This gradebook will use a Java library class called `Vector`. A `Vector` object is a container in which you can place other objects--the vector will keep track of them for you, and give them back when you need them.
+
+You can think of a `Vector` object as containing a sequence or list of objects all in a row. Although `Vector` provides lots of methods, there are only 3 that we need to know for Part B of the lab:
+
+*   `void add(Object o)`\--adds an object onto the end of the sequence of elements in the vector.
+    
+*   `int size()`\--returns the current number of objects in the vector.
+    
+*   `Object elementAt(int index)`\--returns the object at position `index` within the vector. Positions start at zero and go up to _(size - 1)_.
+    
+
+Creating a vector is easy. Suppose you have a field named `students`. You can create a new `Vector` like this:
+
+    students = new Vector();
+
+Once you have created a vector, you can call the three methods described above as needed in order to manipulate its contents.
+
+If you reach here before half the lab session has passed, switch roles now. Otherwise, you should have already switched roles.
+
+### Procedure
+
+1.  **Create a class called `Gradebook`**
+    
+    1.  Create a new class called `Gradebook` using the "New Class" button and the "**Bare Class**" template. Note that your class must be given this name (be sure **not** to accidentally type `GradeBook` instead, since Java is case-sensitive).
+        
+    2.  Add "`import java.util.Vector;`" at the top of your class.
+        
+    3.  Give your new class **one field**: a `Vector` to hold the student objects contained in the Gradebook.
+        
+    4.  Add a **constructor** to your class that takes no parameters. The constructor should initialize the object's field by creating a new vector.
+        
+2.  **Add an accessor method**
+    
+    1.  Add this method to your class and implement it:
+        
+            public void addStudent( Student student )
+            {
+                _// add this student to the Gradebook_
+            }
+        
+        You should use `Vector`'s `add()` method to insert the new student in the vector.
+        
+3.  **Add an accessor method**
+    
+    1.  Add this method to your class and implement it:
+        
+            public Student findStudent( String name )
+            {
+                _// find the student in the Gradebook and return him/her_
+            }
+        
+        To implement this method, write a loop that walks through all of the students stored in the vector until it finds the student with the specified name. Note that `Vector`'s `elementAt()` method returns an `Object`, not a student. You can use a cast to state that the returned value should be treated as a `Student` object instead:
+        
+            _// retrieve the 15th student in the sequence_
+            Student x = (Student)myVector.elementAt( 14 );
+        
+4.  **Test your class**
+    
+    1.  Create a test class for `Gradebook`.
+        
+    2.  Brainstorm with your partner about what the test fixture should be. You can create the necessary object(s) on the object bench and use "Object Bench to Test Fixture", or type the code directly into the test class yourself.
+        
+    3.  Write test cases for `addStudent()` and `findStudent()`. Compile your code and run all tests until all errors are fixed.
+        
+    4.  What does your `findStudent()` method do if it is given the name of a student that is not in the gradebook? Write a test case that asserts the value produced by `findStudent()` is `null` in this case. Compile and run your tests. If your implementation of `findStudent()` does something other than return `null` in this situation, fix it.
+        
+    5.  What does your `findStudent()` method do if it is given the name of a student that is not in the gradebook? Write a test case that asserts the value produced by `findStudent()` is `null` in this case. Compile and run your tests. If your implementation of `findStudent()` does something other than return `null` in this situation, fix it.
+        
+    6.  If time permits, examine the following code:
+        
+        Student brian = new Student( "Brian" );
+        Student kim   = new Student( "Kim" );
+        brian.addAssignment( 70 );
+        kim.addAssignment( 90 );
+        
+        Gradebook gradebook = new Gradebook();
+        gradebook.addStudent( brian );
+        gradebook.addStudent( kim );
+        
+        gradebook.findStudent( "Brian" ).addAssignment( 80 );
+        System.out.println( gradebook.findStudent( "Brian" ) );
+        System.out.println( gradebook.findStudent( "Kim" ) );
+        
+        Write a test case based on this code that uses accessor methods to assert the correct results are being produced, instead of printing out values.
+        
+5.  **Submit your solution**
+    
+    1.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", double-click to open the "CS 1705 Labs" folder, and select "Lab 08b". Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    2.  Fix any errors, warnings, or suggestions that are indicated in the analysis of your submission. Also, note that a large portion of the score will be provided by the TA when she or he reviews your code later, and those points will not show up until then (you should receive e-mail from Web-CAT when the TA has finished the manual part of the grading on-line).
+        
+
+If You Finish Early
+-------------------
+
+If you and your partner finish both parts of this assignment early, try adding a `toString()` method to your gradebook class. First, try printing the `Vector` directly. Is it the output you expected?
+
+Next, try implementing your own version of `toString()`. You can use a loop to walk through the students one by one, concatenating the string values together with appropriate separators (perhaps including "\\n", so each student is on their own line).
+
+Alternatively, you can try to implement a version of `assignmentAverage()` for the gradebook, which computes the average over all student assignment averages.
+
+Before leaving, check with the TA to pick up your graded homework if it is available.
+----------
+
+[systems]
+language: Java
+

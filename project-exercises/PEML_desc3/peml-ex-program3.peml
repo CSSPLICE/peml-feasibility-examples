@@ -1,0 +1,322 @@
+title: Talk Like a Pirate
+external_id: peml-ex-program3
+is_public: true
+experience: 25
+language_list: Java
+
+license.id: cc-sa-4.0
+license.owner.email: edwards@cs.vt.edu
+license.owner.name: Stephen Edwards
+
+tags.topics: class, functions
+tags.style: coding problem
+
+instructions:----------
+_International Talk Like a Pirate Day_ passed us by without a peep last month, but this assignment is inspired by this silly holiday. If you haven't heard of it, in 1995, John Baur and Mark Summers invented a new holiday, International Talk Like a Pirate Day. As they proposed it, on every September 19th, people around the world would be encouraged to talk like a pirate (with lots of "Arrrrs" and "Ahoys" and the like). At the official Talk Like a Pirate Day Web site, [www.talklikeapirate.com](http://www.talklikeapirate.com), you can read about the history of the holiday, order official merchandise, and even experiment with a simple Web page that translates simple English phrases into pirate talk. If you want to know how to chat like a pirate, dailypress.com has a [pirate vocabulary guide](http://www.dailypress.com/entertainment/dp-pirate-vocabulary-story.html).
+
+In this assignment, you will be implementing a simple textual translator that can read in plain English text and translate it into Pirate talk. Nothing fancy here--just reading in words from stdin, translating those you can, and sending the results to stdout. However, pay particular attention to your design, and make it as flexible, robust, and easy to maintain/change/update as possible.
+
+The real focus here is on using a `Map` for the first time, as well as taking a crack at designing a set of classes by yourself.
+
+### Pirate Vocabulary
+
+First, note that we're going to use a very simple plain-text input format. Imagine that the input text consists of a series of _words_ separated by white space (one or more spaces, tabs, newlines, etc.). A word is just a series of consecutive non-whitespace characters (such as letters, digits, punctuation characters, etc.). Here is an example containing four words:
+
+All cows eat grass.
+
+In this example, the last word is "grass.", including the period. Similarly, this example contains three words:
+
+Can't you dance?
+
+Fortunately, a Java `Scanner` naturally skips over whitespace and grabs the next word from an input stream, so reading the input should be easy.
+
+So what do you translate? Use the following pirate talk translation table:
+
+English word
+
+Pirate translation
+
+hello
+
+ahoy
+
+hi
+
+yo-ho-ho
+
+hey
+
+avast
+
+my
+
+me
+
+friend
+
+me bucko
+
+sir
+
+matey
+
+madam
+
+proud beauty
+
+stranger
+
+scurvy dog
+
+officer
+
+foul blaggard
+
+where
+
+whar
+
+is
+
+be
+
+are
+
+be
+
+the
+
+th'
+
+you
+
+ye
+
+your
+
+yer
+
+you're
+
+ye be
+
+we're
+
+we be
+
+old
+
+barnacle-covered
+
+attractive
+
+comely
+
+happy
+
+grog-filled
+
+nearby
+
+broadside
+
+restroom
+
+head
+
+restaurant
+
+galley
+
+hotel
+
+fleabag inn
+
+bank
+
+buried treasure
+
+yes
+
+aye
+
+yes!
+
+aye aye!
+
+addled
+
+mad
+
+after
+
+aft
+
+money
+
+booty
+
+professor
+
+cap'n
+
+food
+
+grub
+
+of
+
+o'
+
+quickly
+
+smartly
+
+to
+
+t'
+
+and
+
+an'
+
+it's
+
+it be
+
+right
+
+starboard
+
+left
+
+port
+
+anything else not listed
+
+remains unchanged
+
+Also, to simplify things, let's call a word that does not end in a period a _regular_ word, like "All", "Can't", "cows", and "dance?". In addition, an _end-of-sentence_ word is one that does end in a period, like "grass." in the first example. Thus, a _sentence_ is a sequence of _regular_ words plus one _end-of-sentence_ word.
+
+So, to translate your input stream into pirate talk, just read in a sequence of words. For each word, if it is a _regular_ word, just print out its translation followed by a space. If it is an _end-of-sentence_ word, then print out its translation, followed by " Arrr." and a newline. That way, each _sentence_ in the input will be printed on a separate line. When translating end-of-sentence words, don't consider the period when determining its translation, but do print the period at the end of the word out.
+
+Here are some examples. For this input:
+
+the professor wants to know if there
+is a restaurant nearby.
+
+The corresponding translation would be:
+
+th' cap'n wants t' know if there be a galley broadside. Arrr.
+
+For this input:
+
+yes there is one on the right side.
+
+The translation would be:
+
+aye there be one on th' starboard side. Arrr.
+
+Also, notice that extra whitespace in the input makes no difference in the output:
+
+        yes
+        there
+is one
+ on               the right
+side.
+
+The translation would still be:
+
+aye there be one on th' starboard side. Arrr.
+
+Finally, you could send arbitrarily amounts of text to the translator, as many lines as you want:
+
+the professor wants to know if there
+is a restaurant nearby.   yes there
+is one on the right
+side.
+
+The translation would still be:
+
+th' cap'n wants t' know if there be a galley broadside. Arrr.
+aye there be one on th' starboard side. Arrr.
+
+Also, note that all of the translations listed, and all of the examples shown here, are in lowercase. This is the **minimum** level of behavior you are required to implement. However, feel free to explore a bit and invent on your own. If you want to tackle mixed-case words, or you want to add additional translations of your own beyond what is listed in the table, or you want to support translating multi-word phrases (i.e., "excuse me" becomes "avast!", etc.), or you want to support proper translation of words that end in commas/semicolons/etc., feel free to do so. Get creative. Add your own flourishes. Have fun with it.
+
+#### R1. Requirements Summary: Pirate Vocabulary
+
+**R1.1**: All tokens (or _words_) are delimited by a sequence of one or more whitespace charaacters, or the beginning or ending of the input stream. Whitespace characters are defined as those characters considered to be whitespace by the default character traits class in the default locale. Don't think too hard: the standard library will do this for you.
+
+**R1.2**: Other than serving as a delimiter between words, all whitespace characters in the input sequence (including newlines) are meaningless, and have no effect on the output.
+
+**R1.3**: The input consists of a sequence of zero or more words. Thus, the smallest legal input contains no words, e.g., an empty string, or a sequence of all whitespace characters.
+
+**R1.4**: A word can be a _regular word_, that is, a word that does not end in a period.
+
+**R1.5**: A word can be a _end-of-sentence word_, that is, a word that does end in a period.
+
+**R1.6**: All _regular words_ in the input sequence should cause output to be generated. The output for a regular word is the corresponding substitution text from the table above, followed by a single space character.
+
+**R1.7**: All _end-of-sentence words_ in the input sequence should cause output to be generated. When looking up translations for an end-of-sentence word, the period at the end of the word is not considered in the lookup process. The output for an end-of-sentence word is the corresponding substitution text from the table above, followed by a period, one space character, the string "Arrr." (including the final period as well), and a newline (generated by `println()`).
+
+**R1.8**: All substitutions in the table above must be supported. Additional translations of your own design are also acceptable.
+
+**R1.9**: Note that the translation rules indicate that all regular words and end-of-sentence words that do not appear in the table above should be output in their original form, without substitution.
+
+Design
+------
+
+Part of the challenge in this assignment is to come up with an appropriate set of classes that break the problem down into manageable parts. We don't expect everyone to be an expert at this yet, but do your best to choose classes that relate to the problem, that have an appropriate division of responsibilities, and that are easy to test.
+
+Part of your grade will be based on the quality of your classes, which includes how you decompose complex behaviors into smaller, easily understood methods, how you name items, how you record inter-object associations, and how you document your code.  You may find it helpful to review the program grading rubric here on Canvas so you know how your choices about classes, methods, and naming will be judged.
+
+There is, however, one class that **you are required to have** in your design: a class called `PirateTranslator`. You **must** use this class name in your design. The syntactic declaration of your class **must** include a `main()` method of the standard form for a main program. You may add additional methods of your own devising (indeed, that will be important for your grade in complicated classes), or other classes you design.
+
+The `PirateTranslator` is responsible for splitting its standard input stream into individual words, evaluating each word, and printing the results on the standard output stream.
+
+#### R2. Requirements Summary: Design
+
+**R2.1**: Your solution must define a `PirateTranslator` class.
+
+**R2.2**: Your `PirateTranslator` must provide a public main`()` method with the standard signature for a main program.
+
+**R2.3**: Your `PirateTranslator` may have as many additional methods as you desire, with visibility levels you assign.
+
+**R2.4**: Each invocation of the `main()` method reads input from `System.in`, and produces output on `System.out`. The input stream must be read all the way to its end, and translated according to the requirements in this assignment. All translated output must be written to the given output stream.
+
+Note: In designing your program, it is advisable to **separate** the choice of where input comes from and where output goes to from the remainder of your design. The _principle of separation of concerns_ is a fundamental software design principle that leads us to compartmentalize choices so that the rest of the program can be used in alternative situations where other choices apply. For example, what if you want your program to read from a file instead of standard input, or from a web page, or even from another program? What if you want your program to print output to a file or some other destination? Consider having your `main()` program create an appropriate `Scanner` object and `PrintWriter` object from the desired input/output locations, and pass them into the remainder of your code, so that changing input or output locations is localized into a single point in the `main()` program.
+
+Also, you probably already know that when you invoke any program from the command line (or in Eclipse), you can type directly into it and see its output. Alternatively, from the command line you can use I/O redirection to read input from a file or send output to a file:
+
+java -cp bin PirateTranslator < myInput.txt > myOutput.txt
+
+Those of you who use Unix probably have seen this already, but it works on Windows, too, which also supports I/O redirection from programs. You can even do it in Eclipse by editing your program launch configuration for your PirateTranslator--if you're not sure, ask on Piazza. Using this approach, it is possible to create a few "canned" input tests to place in files you can use over and over again, without having to retype them in. Of course, after you've done that a couple of times, you should _really_ consider moving those into real unit tests!
+
+### Testing
+
+In addition to writing your program, you will also need to write a set of test cases that demonstrate that your program works correctly. In fact, you are expected and encouraged to write tests incrementally for each method you add to or work on, as described in earlier assignments.
+
+Also, remember that our student library version of `TestCase` provides useful features for loading contents into `System.in` and capturing output from `System.out`, for use in writing tests that are perfect for this kind of assignment. However, it _also_ provides helper methods for doing the same thing with a `Scanner` object (that's already built into the test class) and a `PrintWriter` object (also built in), which makes it easy to test individual methods in your classes that don't directly refer to the standard streams by name, but instead take parameters of one or both of these types.
+
+A good rule of thumb, as before, is to create a test class for each class you write. For example, if you write a `PirateDictionary` class, you should also write a `PirateDictionaryTest` class. Further, for each method you write, add one or more tests to the corresponding test class. Try to cover all of the variations in possible errors that might have occurred in the method being tested.
+
+At any point, you can submit your work-in-progress to Web-CAT to check out the thoroughness of your testing. Web-CAT tracks exactly which parts of your program are executed by your own tests. In the source code pages it provides for you, it will color-highlight lines that are not tested well enough, with mouse-over pop-up text that explains _why_ that part of your work has not been tested thoroughly enough. Use this information to write more tests and refine your work.
+
+You are **strongly urged** to write test cases for each method your write **as you write and refine that method**. Note: if you seek help from an instructor or TA with a problem, you will be expected to **already have written** test cases that demonstrate the problem or difficulty. If you do not have them, you may be asked to go and write them **before** you receive help.
+
+#### R3. Requirements Summary: Testing
+
+**R3.1**: You must fully test your own solution using unit tests that are turned in as part of your project.
+
+**R3.2**: At a minimum, your tests are expected to exercise every path through each method, constructor, and destructor in every class in your solution, as well as each atomic condition in if, switch, and loop statements.
+
+**R3.3**: If you seek assistance from an instructor or TA in resolving a problem with your solution, you must have written within your project sufficient test cases to demonstrate which parts of your solution work, as well as to reproduce the questionable or incorrect behavior you are seeking to resolve.
+
+**R3.4**: You may not receive assistance in resolving a bug if you do not have one or more test cases demonstrating the bug.
+
+**R3.5**: You may not receive credit for behavior that you have not tested.
+----------
+
+[systems]
+language: Java
+
