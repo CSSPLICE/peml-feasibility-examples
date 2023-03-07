@@ -1,0 +1,199 @@
+title: Rot-13 Decryption
+external_id: peml-ex-lab06
+is_public: true
+experience: 25
+language_list: Java
+
+license.id: cc-sa-4.0
+license.owner.email: edwards@cs.vt.edu
+license.owner.name: Stephen Edwards
+
+tags.topics: class, functions
+tags.style: coding problem
+
+instructions:----------
+Goal
+----
+
+This laboratory assignment marks a departure from using Karel. Instead, we are going to begin writing Java classes that exhibit other kinds of behavior and that manipulate other forms of data.
+
+In this lab, you will be writing a _Rot-13_ decryptor. Rot-13 is a simple way of encrypting text so that it is not readable by the casual observer. In the 1990's, it was popular in newsgroups, where it was often used to encode jokes intended for an adult audience. Many news reading programs supported decoding and encoding of newsgroup messages in this format.
+
+The Rot-13 code is simple, and is used to encrypt alphabetic letters (all remaining punctuation symbols, numeric digits, or other characters remain unchanged). We can number the letters in our alphabet from 0 through 25, with the letter "A" being 0 and "Z" being 25. Encoding a message using the Rot-13 code involves replacing each letter with the letter 13 places further down the alphabet, wrapping around the end if necessary. Thus, the letter "A" (0) would be replaced by the letter "N" (13). The letter "B" (1) would be replaced by the letter "O" (14).
+
+If a letter to encrypt appears towards the end of the alphabet, the alphabet simply wraps around and starts again. So the letter "P" (15) would be replaced by the letter "C" (15 + 13 = 28, which is 2 after wrapping around).
+
+The "wrap around" math is accomplished simply using the "modulo" operator in Java, which is written as a percent sign (%). This operator returns the remainder after integer division. If _x_ is the position of some letter we are trying to rotate, it should be replaced by the letter at the position denoted by _(x + 13) % 26_, or the integer remainder obtained by dividing _(x + 13)_ by 26, which will be a number between 0 and 25.
+
+Rot-13 is just one of a whole family of simple character encryption techniques. In fact, you can devise a Rot-_k_ encryption scheme that works the same way, for any integer _k_. With _k = 0_, each letter is replaced by itself. With _k = 20_, each letter is shifted 20 places down the alphabet. The interesting thing about Rot-13 is that, because 13 is exactly one half the length of the alphabet, encoded text can be _de_crypted by the same technique. Shift each encoded letter 13 places, and it will have gone a total of 26 positions down the alphabet (with wrap-around!), back to its original position.
+
+To shift letters, recall that our alphabet is encoded in plain text streams using the [ASCII code](http://www.asciitable.com/). In this code, an upper case "A" is represented by the character code 65, "B" by 66, and so on, with capital "Z" represented by 90. A lower case "a" is represented by the character code 97, "b" by 98, and so on, with "z" represented by 122.
+
+Learning Objectives
+-------------------
+
+*   Exposure to processing text streams
+*   Exposure with basic input and output
+*   Familiarity with creating new subclasses
+*   Familiarity with writing test cases
+*   Familiarity with while loops
+*   Mastery of the Web-CAT Grader
+
+Part A: Encoding a Single Letter
+--------------------------------
+
+In Part A of this lab assignment, you will begin writing a class to encode text using Rot-13. You will start by writing and testing a method to encode a single character.
+
+Decide which of you will be the **driver** for Part A. The driver should log in. For the remaining instructions in Part A, the driver should do all the typing/mousing. The driver should feel free to ask for advice or bounce ideas off the navigator, and the navigator should look out for errors in what the driver is typing.
+
+### Procedure
+
+1.  **Create your a class called `RotDecryptor`**
+    
+    1.  Start BlueJ on your lab machine and create a new project for this lab assignment.
+        
+    2.  Create a new class using the "New Class" button. Name your class `RotDecryptor` and choose the "**Bare Class**" template. Fill in the comment placeholders at the top of the file with your information.
+        
+    3.  Add these lines at the top of the file:
+        
+        import cs1705.\*;
+        import java.io.\*;
+        
+        Note that your class should **not** extend any superclass.
+        
+2.  **Practice writing characters using ASCII codes**
+    
+    1.  Add a method called `printAlphabet()`. Give it a local `int` variable initialized to 65. This local variable will represent the integer ASCII code for one letter. Note that this method is just for exploration of the concepts involved, and it won't actually be used in your decryption code.
+        
+    2.  Add a `while` loop that increments your local variable through all integer values up to and including 90. Inside the loop, use `**System.out.write()**` to write the character holding the given ASCII code value to the terminal window. (See [the I/O tutorial](http://www.moodle.cs.vt.edu/mod/resource/view.php?id=251) for more info on `System.out` and `write()`.)
+        
+    3.  Compile and run your method. Does it produce what you expected?
+        
+    4.  Modify your `printAlphabet()` method to print out the lower case alphabet instead of the upper case version.
+        
+3.  **Familiarize yourself with the modulo operator**
+    
+    1.  Add a second method called `printModuloTable()`. Give it a local `int` variable called `num` initialized to zero. Note that this method is just for exploration of the concepts involved, and it won't actually be used in your decryption code.
+        
+    2.  Write a `while` loop that increments your local variable through all integer values up to and including 50. Inside the loop, use `**System.out.println()**` to print the value of the `int` variable. Compile and run your method to see what happens.
+        
+    3.  Modify your method so that instead of printing the value of `num`, it prints the value of the expression `num % 26`. Compile and run your method to see what happens. In particular, scroll through the terminal window output to see where the number "wraps around".
+        
+    4.  Discuss with your partner and pick a number different than 26, and replace the 26 in the modulo expression. With your partner, come up with a prediction about what will happen, then recompile and run your code. Did it behave as you expect?
+        
+4.  **Write tests for a method that rotates a single character**
+    
+    1.  Right-click your `RotDecryptor` class and create a test class for it.
+        
+    2.  Imagine that your class provided a method with this signature:
+        
+            public int rotateCharacter( int aCharacter );
+        
+        This method takes a single parameter that is the integer code for one character (which may or may not be a letter). It then returns the integer code for the "encrypted version" of that character.
+        
+    3.  **Before writing this method**, brainstorm potential test cases with your partner. Open your test class in an edit window and add import lines for `cs1705.*` and `java.io.*`. Add all the test cases that you and your partner believe are reasonable (you can use `assertEquals()` to claim that two values are the same). You can use an [ASCII table](http://www.asciitable.com/) to look up codes for letters, as well as other symbols, to use as test values.
+        
+    4.  Note that a single character can be written as a literal value by surrounding it with single quotes, which is often more convenient than writing the corresponding ASCII code. For example, a test case might look like this:
+        
+            public void testRotateA()
+            {
+                int result = <_instance of your RotDecryptor>_.rotateCharacter( 'A' );
+                assertEquals( result, 'N' );
+            }
+        
+        This can be shortened further if you are comfortable doing so:
+        
+            public void testRotateA()
+            {
+                assertEquals( <_instance of your RotDecryptor>_.rotateCharacter( 'A' ), 'N' );
+            }
+        
+5.  **Implement `rotateCharacter()`**
+    
+    1.  Implement `rotateCharacter()` in your `RotDecryptor` class.
+        
+    2.  Run all your tests, and repair errors until all tests pass.
+        
+    3.  Modify your `printAlphabet()` method so that it prints both the original character and the character resulting from calling your `rotateCharacter()` method. Is the output what you expect?
+        
+6.  **Submit your solution**
+    
+    1.  You probably will want to comment out your `printAlphabet()` and `printModuloTable()` methods before submission. These methods were intended to familiarize you with the basic concepts, but they won't be used in your decryption solution. Since all they do is print fixed information out to the terminal, they are harder to test appropriately. Commenting them out ensures Web-CAT won't expect you to test them, but leaves them in place in case you need to return to them later for your own reasons. Add a line with "`/*`" just before the method declaration, and another with "`*/`" just after the closing brace at the end of the method.
+        
+    2.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", open the CS 1705 category, and select Lab 06. Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    3.  Fix any errors, warnings, or suggestions that are indicated in the analysis of your submission. For Part A, all of the score is automatically generated, so you won't have to wait for TA comments on Part A later.
+        
+
+Part B: Encrypting a complete message
+-------------------------------------
+
+In Part B of this lab assignment, you will write one operation to encrypt an entire stream of text:
+
+    public void decrypt( BufferedReader in, PrintWriter out )
+        throws Exception
+    {
+        _// ..._
+    }
+
+If you reach here before half the lab session has passed, switch roles now. Otherwise, you should have already switched roles.
+
+### Procedure
+
+1.  **Devise and write test cases for your `decrypt()` method**
+    
+    1.  Brainstorm with your partner to come up with a list of test cases for the `decrypt()` method. Pay particular attention to the [Reading from and Writing to Strings](http://www.moodle.cs.vt.edu/mod/resource/view.php?id=251#strings) and [Testing I/O-based Operations](http://www.moodle.cs.vt.edu/mod/resource/view.php?id=251#testing) in the I/O tutorial.
+        
+    2.  Write at least two test cases. You may find it helpful to add an empty implementation of `decrypt()` to your `RotDecryptor` class so that you can compile your test cases to check for superficial errors.
+        
+2.  **Implement `decrypt()`**
+    
+    1.  You may find it useful to model your implementation after the [`CopyFileByChar.copyFile()`](http://www.moodle.cs.vt.edu/mod/resource/view.php?id=251#exampleinout) example in the I/O tutorial. Just remember to call your `rotateCharacter()` method on each character processed.
+        
+    2.  Run your tests and fix errors as necessary until all tests pass.
+        
+3.  **Try your encryptor on some encrypted text.**
+    
+    1.  Add this method to your `RotDecryptor` class:
+        
+            public void decryptMessage()
+            {
+                try
+                {
+                    BufferedReader in  = IOHelper.createBufferedReaderForURL(
+                        "http://courses.cs.vt.edu/~cs1705/Spring04/labs/lab07/lab07-message.php" );
+                    PrintWriter    out = IOHelper.createConsoleWriter();
+        
+                    decrypt( in, out );
+        
+                    in.close();
+                    // out.close();  <-- Never close the console!!!
+                }
+                catch ( Exception e )
+                {
+                    e.printStackTrace();
+                }
+            }
+        
+    2.  Compile your class and run this new method. It opens an input stream from a URL on the course web site. That URL randomly picks one of several Rot-13 encrypted messages to deliver. The results should appear on BlueJ's terminal window when you run the method. This is a handy way to try out your code. However, be sure to comment out this method before making your submission, since it is not part of the decryption service provided by this class (does it give you any ideas for test cases, though?).
+        
+4.  **Submit your solution**
+    
+    1.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", double-click to open the CS 1705 folder, and select Lab 06. Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    2.  Fix any errors, warnings, or suggestions that are indicated in the analysis of your submission. Also, note that a large portion of the score will be provided by the TA when she or he reviews your code later, and those points will not show up until then (you should receive e-mail from Web-CAT when the TA has finished the manual part of the grading on-line).
+        
+
+If You Finish Early
+-------------------
+
+If you and your partner finish both parts of this assignment early, try modifying your solution so that it implements a general-purpose Rot-_k_ decryptor, instead of just a Rot-13 decryptor. To do this, you should add a constructor to your class so that it takes the value for _k_ as a parameter, which can be saved in a field within your class. You will also need to modify your `rotateCharacter()` method to use this field appropriately. Naturally, you should write appropriate test cases for alternate values of _k_.
+
+If you succeed in making a Rot-_k_ decryptor, note that unlike the special value 13, other values for _k_ usually require a separate _encryption_ process, since encrypting the text twice will **not** produce the original, unencrypted text. How would you add an `encrypt()` method to this class? How would you modify your current design to allow this addition without requiring you to duplicate lots of code (in particular, can you avoid duplicating both `decrypt()` and `rotateCharacter()`)?
+
+Before leaving, check with the TA to pick up your graded homework if it is available.
+----------
+
+[systems]
+language: Java
+

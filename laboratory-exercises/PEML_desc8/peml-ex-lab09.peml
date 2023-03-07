@@ -1,0 +1,176 @@
+title: Spelling Checker
+external_id: peml-ex-lab09
+is_public: true
+experience: 25
+language_list: Java
+
+license.id: cc-sa-4.0
+license.owner.email: edwards@cs.vt.edu
+license.owner.name: Stephen Edwards
+
+tags.topics: class, functions
+tags.style: coding problem
+
+instructions:----------
+Goal
+----
+
+In this lab, you are going to develop a class that can be used for rudimentary spell-checking tasks. This is an opportunity to work with arrays as well as to learn more about the methods provided by the `String` class.
+
+Learning Objectives
+-------------------
+
+*   Exposure to arrays
+*   Familiarity with writing constructors
+*   Familiarity with fields
+*   Familiarity with object state
+*   Mastery of creating new classes
+*   Mastery of writing test cases
+*   Mastery of while loops
+*   Mastery of the Web-CAT Grader
+
+Part A: Modeling A Spell Checker
+--------------------------------
+
+In Part A of this lab assignment, you will begin write a `SpellChecker` class that can check the spelling of individual words. It will do this by maintaining an internal list of properly spelled words in the form of an array, and then checking words against this list.
+
+Decide which of you will be the **driver** for Part A. The driver should log in. For the remaining instructions in Part A, the driver should do all the typing/mousing. The driver should feel free to ask for advice or bounce ideas off the navigator, and the navigator should look out for errors in what the driver is typing.
+
+### Procedure
+
+1.  **Create a class called `SpellChecker`**
+    
+    1.  Start BlueJ on your lab machine and create a new project for this lab assignment.
+        
+    2.  Create a new class called `SpellChecker` using the "New Class" button and the "**Bare Class**" template.
+        
+    3.  Give your new class **two fields**: an array of Strings to hold properly spelled words, and an `int` to hold the number of words contained in this array. The array's type should be `String[]`. Remember that when you create an array object, all of its entries will be null.
+        
+    4.  Add a **constructor** to your class that takes a single parameter representing the maximum number of words the checker can hold:
+        
+            public SpellChecker( _/\* use one int parameter \*/_ )  
+            {  
+                _// initialize your fields here_
+            }
+        
+        The initial values for both fields should be assigned in the body of the constructor.
+        
+2.  **Write the primary mutator method**
+    
+    1.  Add the following mutator method:
+        
+            public void addWord( _/\* use one String parameter \*/_ )  
+            {  
+                _// Add it in the next available array index_
+            }
+        
+        Implement this mutator method.
+        
+    2.  Compile your class, fixing any errors.
+        
+    3.  Create a spell checker object on the object bench (pick your own maximum word count, like 10). Add a couple of words. Don't forget to use double-quotes around your string values when interactively invoking methods like `addWord()`.
+        
+    4.  Right-click your spell checker object and choose "Inspect". Confirm that all fields are set to values that you intend. Double-click on the array field in the list (or select it and click "Inspect"). Confirm that it contains the values you intend.
+        
+3.  **Write a spell-checking method**
+    
+    1.  Add a method to your class called `spelledCorrectly()`. This method should take a single string as a parameter and return a boolean value: true if the given word is present in the list of words inside the class, and false otherwise. Implement this method.
+        
+    2.  Compile your class, fixing any errors.
+        
+4.  **Set up a test class**
+    
+    1.  Create a test class for `SpellChecker`.
+        
+    2.  Decide on your test fixture and set it up. Discuss this with your partner if you are unsure what to do.
+        
+    3.  Add a test case that checks for a properly spelled word.
+        
+    4.  Add a test case that checks for an improperly spelled word.
+        
+    5.  Compile and run your tests. Fix any errors.
+        
+    6.  Discuss other possible conditions you need to test with your partner. Add any new test cases you two devise, then compile and run them.
+        
+5.  **Look for words containing a given word**
+    
+    1.  Add a method skeleton to your class for a method called `wordContaining()`. This method should take a single string argument and return a string result. For now, you can just place "return null;" as its body, so that you can compile your class.
+        
+    2.  Brainstorm test cases for the `wordContaining()` method.
+        
+        The `wordContaining()` method is used to look through the list of words inside the spell checker, trying to find one that contains the given string argument. If any such word is found, that word should be returned. If no such word is found, then null should be returned.
+        
+        For example, suppose our spelling checker contained the words "boy", "house", "dog", "kettle", and "comment". It we ask for the word containing "use", the result would be "house". If we ask for the word containing "two", the result would be null.
+        
+        Think of some basic test cases and add them to your test class. Compile them and run the tests.
+        
+    3.  Implement `wordContaining()`. Compile it and run your tests, fixing errors as necessary.
+        
+    4.  Discuss with your partner whether you have thoroughly tested the methods in this class. Add any missing tests that you uncover.
+        
+6.  **Submit your solution**
+    
+    1.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", open the CS 1705 Labs category, and select "Lab 09a". Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    2.  Fix any errors, warnings, or suggestions that are indicated in the analysis of your submission. For Part A, all of the score is automatically generated, so you won't have to wait for TA comments on Part A later.
+        
+
+Part B: Loading a Larger Word List
+----------------------------------
+
+In Part B of this lab assignment, you will extend your simple spell checker with additional features.
+
+If you reach here before half the lab session has passed, switch roles now. Otherwise, you should have already switched roles.
+
+### Procedure
+
+1.  **Add a method to load words from a list**
+    
+    1.  Add a public void method called `addWordsFromURL()`. This method should take a string argument (a URL) pointing to a file containing a list of words, one per line. It should open the URL (use `IOHelper.createBufferedReaderForURL()`) and read from it one line at a time using `readLine()`. Each line represents one word, and should be added to the spell checker's array. Don't forget to import the appropriate packages.
+        
+        You can try your method out on this URL: [http://moodle.cs.vt.edu/files/cs1705/lab09/words.txt](http://www.moodle.cs.vt.edu/files/cs1705/lab09/words.txt). The 154 words in this list come from a [brief excerpt from _Alice in Wonderland_](http://www.moodle.cs.vt.edu/files/cs1705/lab09/Alice.txt).
+        
+    2.  Look at the word list in your web browser. Write a few test cases that load up the word list from the URL, and then spell-check some samples words (both words in the list, and words not in the list).
+        
+    3.  Compile your code and run all your tests.
+        
+2.  **Track the lengths of the longest and shortest words**
+    
+    1.  Add a method skeleton to your class for a method called `shortestWordLength()`. This method should return an int. For now, you can just place "return 0;" as its body, so that you can compile your class.
+        
+    2.  Add a method skeleton to your class for a method called `longestWordLength()`. This method should return an int. For now, you can just place "return 0;" as its body, so that you can compile your class.
+        
+    3.  Brainstorm test cases for the `shortedWordLength()` and longestWordLength() methods.
+        
+        The `shortestWordLength()` method should return the length of the shortest word in the spelling checker's array. The `longestWordLength()` method should return the length of the longest word in the spelling checker's array.
+        
+        Think of some basic test cases using the word list from the URL given above and add them to your test class. Compile them and run the tests.
+        
+    4.  Implement the `shortestWordLength()` method. But **there is a catch**: you **cannot** use a loop to walk through the array inside this method (or anything called by this method) in order to find the shortest length.
+        
+        Instead, think about how you can keep track of the shortest word so far as words are being added to the spell checker, so that you can use this information immediately without having to walk through the entire array looking for the shortest word.
+        
+    5.  Run your tests and fix errors until this method works correctly.
+        
+    6.  Use the same technique to implement the `longestWordLength()` method **without** using a loop the search the array again.
+        
+3.  **Submit your solution**
+    
+    1.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", double-click to open the "CS 1705 Labs" folder, and select "Lab 09". Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    2.  Fix any errors, warnings, or suggestions that are indicated in the analysis of your submission. Also, note that a large portion of the score will be provided by the TA when she or he reviews your code later, and those points will not show up until then (you should receive e-mail from Web-CAT when the TA has finished the manual part of the grading on-line).
+        
+
+If You Finish Early
+-------------------
+
+If you and your partner finish both parts of this assignment early, think about spell-checking an entire document (like a web page). Try to write an `allWordsSpelledCorrectly()` method that takes a stream (or a URL) as a parameter, and spell-checks all the words in the stream.
+
+This is much easier than it sounds, as long as you have a way to identify individual words. Read the input one line at a time, and then use a `StringTokenizer` to split it into words. Look up the API documentation for `StringTokenizer` to see how it is used (you can also look it up in the text book for examples).
+
+Before leaving, check with the TA to pick up your graded homework if it is available.
+----------
+
+[systems]
+language: Java
+

@@ -1,0 +1,68 @@
+title: Modeling a Microwave Oven
+external_id: peml-ex-program2
+is_public: true
+experience: 25
+language_list: Java
+
+license.id: cc-sa-4.0
+license.owner.email: edwards@cs.vt.edu
+license.owner.name: Stephen Edwards
+
+tags.topics: class, functions
+tags.style: coding problem
+
+instructions:----------
+### Learning objectives
+
+*   Write a complete (but simple) class with multiple methods
+*   Write instance variable (field) declarations
+*   Write accessor methods (getter methods)
+*   Write mutator methods
+*   Write methods with simple parameters
+*   Write a default constructor
+*   Write a simple test program (a test driver)
+
+### Overview
+
+In this assignment, you will write your first complete class, following the techniques described in Chapter 3. The class will include a constructor to initialize new objects of the class, methods to get important data values associated with an instance of the class, and methods that cause the object to change state or perform a task.
+
+### Details
+
+Write a class called `MicrowaveOven` that models the behavior of a really simple microwave oven. This microwave includes a power setting, ranging from 1-10, a timer, indicating the number of seconds of cooking time, and a "start" button that starts the cooking process. Your class should provide the following:
+
+*   Instance variables (fields) to hold the power and the cooking time as integers.
+    
+*   `MicrowaveOven()`: a _constructor_ that initializes the instance variables. Initially, the power setting should be 10, and the cooking time should be zero.
+    
+*   `getPower()`: an _accessor_ method (or _getter_ method) that returns the current power setting.
+    
+*   `setPower()`: a _mutator_ method (this specific kind of mutator is also known as a _setter_ method) that takes a single parameter representing the new power level and changes the microwave's power level to the requested value. You may assume that only legal values of 1-10 will be passed into this method.
+    
+*   `getCookingTime()`: an accessor (or getter) method that returns the current cooking time setting.
+    
+*   `setCookingTime()`: a mutator (or setter) method that takes a single parameter representing the new cooking time in seconds and changes the microwave's cooking time setting to the requested value.
+    
+*   `start()`: a mutator method that takes no parameters and that represents pressing the start button. This method should print a message of this form (with appropriate values appearing in place of the blanks):
+    
+    Cooking for \_\_\_ seconds at power level \_\_\_
+    
+
+For examples of how to declare an instance variable, how to write a constructor, or how to write various kinds of methods, refer to the many examples in Chapter 3. The `BankAccount` example in Section 3.3 may be particularly helpful as a reference, if you've never programmed before.
+
+Note that this class isn't a complete program, and can't be run by itself. Instead, it is just a class that serves as a computer representation or model--in this case, a model of a real world thing. So, in order to create something that you can run, also write a `MicrowaveOvenTester` class. Model it after the `BankAccountTester` shown in Section 3.4 of the reading assignment. Your tester should create an instance of your `MicrowaveOven` class, set its power level to 5, its cooking time to 30, and then start the microwave. As with the tester programs described in the text, your program should print out what output it expects to be produced by the microwave as well. Therefore, your tester should produce the following output (the first line comes from the microwave oven object itself when it is started, while the second line comes from the tester program, printing what the output should be):
+
+Cooking for 30 seconds at power level 5
+Expected: Cooking for 30 seconds at power level 5
+
+### Submit to Web-CAT
+
+Submit your solution to Web-CAT ([http://web-cat.cs.vt.edu](http://web-cat.cs.vt.edu/)), once a message has been posted to Piazza that Web-CAT is ready for Program 1 (before such a message is posted by the instructor, Web-CAT won't list the program as something you can submit). You can use the Project->Submit... menu command in Eclipse (if that is not working for you, ask for help on the Piazza course forum). Read through the feedback that Web-CAT provides. It should point out deficiencies it finds. Feel free to improve and resubmit your code as many times as you like before the deadline in order to improve your score.
+
+Please post on the Piazza forum if Web-CAT complains about any issue in your code's formatting that you do not understand how to fix, and we'll be happy to explain.
+
+Remember that projects in this course will be partially evaluated by Web-CAT (35 points for reference tests, 15 points for style) and partially by human evaluation (50 points). Therefore, Web-CAT's automated score will be at most 50/100 points. See the [program grading rubric](https://canvas.vt.edu/courses/6757/pages/program-grading-rubric) for full details on the grading criteria applied to this assignment.
+----------
+
+[systems]
+language: Java
+

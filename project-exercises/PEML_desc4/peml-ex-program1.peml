@@ -1,0 +1,63 @@
+title: Hello Cat!
+external_id: peml-ex-program1
+is_public: true
+experience: 25
+language_list: Java
+
+license.id: cc-sa-4.0
+license.owner.email: edwards@cs.vt.edu
+license.owner.name: Stephen Edwards
+
+tags.topics: class, functions
+tags.style: coding problem
+
+instructions:----------
+### Learning objectives
+
+*   Become familiar with creating an Eclipse project
+*   Become familiar with submitting program assignments to Web-CAT
+*   Write a simple main program in Java
+*   Write program code that prints output
+
+### Overview
+
+This first programming activity isn't really a program assignment. Instead, it is a chance to practice using your tools for the first time to see how they work, without having to also focus on solving a challenging programming problem. As such, it is not graded the same way your real program assignments are--it is only worth 10 points and is graded based on successful completion.
+
+### Your first program
+
+According to Wikipedia (and many stories from old-timers), the traditional first program that many people learn to write is a [Hello, World!](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program--a program that just prints out a simple text message (like "Hello, world!", for example). The reason is that such programs are really simple for learners to understand, since they contain one clearly understandable step with a well-defined outcome, and the corresponding program code is easy to map to that step.
+
+For this assignment, you're going to write a slightly more sophisticated version of "Hello, world!". Write a program (in a class named `CatGreeting`) that prints this output (5 lines long):
+
+ /\\\_/\\     -----
+( ' ' )  / Hello \\
+(  -  ) <  Java   |
+ | | |   \\ Coder!/
+(\_\_|\_\_)    -----
+
+Instead of just "Hello, world!", this output is a small piece of [ASCII art](https://en.wikipedia.org/wiki/ASCII_art)\--a low resolution picture made up of basic printing characters. Your job is to mirror this output exactly (or as close as you are able) in your own program.
+
+Be sure to add a Javadoc comment just before your class, as well as one just before your `main()` method--see the [commenting guidelines](https://canvas.vt.edu/courses/6757/pages/commenting-guidelines "Commenting guidelines") for examples, and be sure to ask for help on the Piazza forum if you are unsure how to do this or what any particular piece means.
+
+### Tips
+
+If you've never used Eclipse before, use the File->New->Java Project menu command to create a new project. Give it a name (such as "Program-0" or "CatGreeting"--generally, avoid spaces in names for projects and folders, though). You can accept the default values for all the other settings in Eclipse's new project wizard and click the "Finish" button.
+
+Find your new project in the Package Explorer view on the left side of your Eclipse workspace. Click on the little triangle icon in front of your project's name to expand or collapse its tree, showing all the files it contains. Right-click on the `src` folder and choose New->Class to create a new class. Give it the name `CatGreeting` and then click "Finish" to create your first class file.
+
+Enter the code you want in your class (refer to examples in Chapters 1-2) to produce the desired output.
+
+To run your program, look at your project's contents in the Package Explorer view on the lefthand side of the Eclipse window and find your `CatGreeting` source file in the `src`. Right-click the source file, and choose the Run As->Java Application menu entry to run it. Eclipse will show the output in its own Console tab, probably located below the edit pane in Eclipse. Continue to edit and refine your work until you are ready to submit it to Web-CAT for analysis.
+
+### Submit to Web-CAT
+
+Submit your solution to Web-CAT ([http://web-cat.cs.vt.edu](http://web-cat.cs.vt.edu/)), once a message has been posted to Piazza that Web-CAT is ready for Program 0 (before such a message is posted by the instructor, Web-CAT won't list the program as something you can submit). You can use the Project->Submit... menu command in Eclipse (if that is not working for you, ask for help on the Piazza course forum). Read through the feedback that Web-CAT provides. It should point out deficiencies it finds. Feel free to improve and resubmit your code as many times as you like before the deadline in order to improve your score.
+
+**Note:** In Web-CAT's feedback, be sure to click on the `CatGreeting.java` link in the table showing your source files to see if Web-CAT has made any comments about your indentation or code formatting. Web-CAT will complain if your formatting is not consistent with the expectations we use in this course. For commenting expectations, refer to our [commenting guidelines](https://canvas.vt.edu/courses/6757/pages/commenting-guidelines "Commenting guidelines"). Definitely post on the Piazza forum if Web-CAT complains about any issue in your code's formatting that you do not understand how to fix, and we'll be happy to explain.
+
+For this assignment only, your program will be automatically graded by Web-CAT only, and is worth 10 points (later assignments are worth 100 points each, and also include manual grading for design criteria by the course staff, according to the [program grading rubric](https://canvas.vt.edu/courses/6757/pages/program-grading-rubric "Program grading rubric")).
+----------
+
+[systems]
+language: Java
+

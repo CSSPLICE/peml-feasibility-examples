@@ -1,0 +1,234 @@
+title: Counting Lines
+external_id: peml-ex-lab07
+is_public: true
+experience: 25
+language_list: Java
+
+license.id: cc-sa-4.0
+license.owner.email: edwards@cs.vt.edu
+license.owner.name: Stephen Edwards
+
+tags.topics: class, functions
+tags.style: coding problem
+
+instructions:----------
+Goal
+----
+
+This laboratory assignment is another task focused on stream input. We're going to implement a class that summarizes information about the "size" of data available through a given input stream. In short, this class will be able to read through all the input available from a stream and count the number of lines and number of characters encountered. This information can then be retrieved from the object using other methods.
+
+Learning Objectives
+-------------------
+
+*   Exposure to processing text streams
+*   Exposure to basic input
+*   Exposure to reading line by line
+*   Exposure to fields
+*   Exposure to object state
+*   Familiarity with creating new classes
+*   Familiarity with writing test cases
+*   Mastery of while loops
+*   Mastery of the Web-CAT Grader
+
+Required Class Features
+-----------------------
+
+You will be writing a class called **`LineCounter`** that must provide the following exported methods:
+
+public class LineCounter
+{
+    public void countURL( String url )
+    {
+        _// ..._
+    }
+
+    public void count( BufferedReader stream )
+        throws Exception
+    {
+        _// ..._
+    }
+
+    public int lines()
+    {
+        _// returns the number of lines present in the last stream counted_
+    }
+
+    public int characters()
+    {
+        _// returns the number of characters present in the last stream counted_
+    }
+}
+
+When initially created, a `LineCounter` object has not counted anything. If either `lines()` or `characters()` are called, they should return zero.
+
+At any point, the `count()` method can be called using an already-open stream. Any subsequent calls to `lines()` should return the number of lines of input read from the stream most recently counted. Any calls to `characters()` should return the number of characters read from the stream most recently counted (not including line termination characters).
+
+Note that `count()` might be called as many times as desired. Thus, you can think of a `LineCounter` object as an object containing _state_: it _remembers_ information from one `count()` call to the next, so that it can always return relevant line or character counts based on the most recent stream counted.
+
+Finally, the `countURL()` method simply creates an appropriate `BufferedReader` object and calls `count()`.
+
+The `LineCounter` class was inspired by a simple program called `wc` that is present on Unix systems. Its name stands for "word count", and it provides a count of the lines, words, and characters in the file named on the command line. If given multiple file names, `wc` counts each one in turn, showing the individual file stats plus the totals across all files. It is a convenient way to get a feeling for the "size" of something, like a directly full of program source files (where just the total bytes is not very informative).
+
+Part A: Accessor Methods and Testing
+------------------------------------
+
+In Part A of this lab assignment, you will begin writing your line counting class.
+
+Decide which of you will be the **driver** for Part A. The driver should log in. For the remaining instructions in Part A, the driver should do all the typing/mousing. The driver should feel free to ask for advice or bounce ideas off the navigator, and the navigator should look out for errors in what the driver is typing.
+
+### Procedure
+
+1.  **Create a class called `LineCounter`**
+    
+    1.  Start BlueJ on your lab machine and create a new project for this lab assignment.
+        
+    2.  Create a new class using the "New Class" button. Name your class `LineCounter` and choose the "**Bare Class**" template. Fill in the comment placeholders at the top of the file with your information.
+        
+    3.  Add these lines at the top of the file:
+        
+        import cs1705.\*;
+        import java.io.\*;
+        
+        Note that your class should **not** extend any superclass.
+        
+    4.  Add skeletons for the `lines()` and `characters()` methods. From the reading assignment, you may recall these are called _accessor_ methods. An accessor method is one that just returns information about an object's state, without changing the object.
+        
+2.  **Write some preliminary tests for the accessor methods**
+    
+    1.  Right-click your `LineCounter` class and create a test class for it.
+        
+    2.  Modify the class and `setUp()` method so that your text fixture consists of a brand new `LineCounter` object. You can do this by editing the test class code directly, or by creating such an object on the object bench and using "Object Bench to Test Fixture."
+        
+    3.  Write a test case for `lines()` that checks for the correct return value before anything has been counted. You can use `assertEquals()` for this purpose (it takes two parameters: the first is the expected value you'd like to see, and the second is the actual value you want to check).
+        
+    4.  Write a test case for `characters()` that checks for the correct return value before anything has been counted.
+        
+3.  **Decide on the fields your class will have**
+    
+    1.  Discuss with your partner how you will store the _state_ that your object must remember. Decide on how many fields you will have and what they contain.
+        
+    2.  Write declarations for your fields in `LineCounter`. Be sure to include an appropriate data type and initial value in each field declaration. Discuss the potential choices for these properties with your partner if you are unsure.
+        
+    3.  Implement your two accessor methods using these fields.
+        
+    4.  Compile your classes and resolve any errors.
+        
+    5.  Run your tests and resolve any errors.
+        
+4.  **Write tests for your `count()` method**
+    
+    1.  Write a skeleton for `count()` that does nothing. Compile your class. This will allow you to write and compile test cases for `count()`.
+        
+    2.  Now, brainstorm with your partner and come up with a few test cases you would like to try. For example, this input has one line:
+        
+        This input has one line.
+        
+        Similarly, this input has two lines:
+        
+        This is the first line.
+        This is the second line.
+        
+    3.  Writing such tests is easier if you have a convenient way to create test cases that do not have to interact with files in order to do their work. Add the following **support method** to your test class:
+        
+            public void countString( String input )
+            {
+                try
+        
+                {
+                    BufferedReader in  =
+                        _/\*# You fill in this line \*/_
+        
+                    ...count( ... );  _/\*# correct this line appropriately \*/_
+        
+                    in.close();
+                }
+                catch ( Exception e )
+                {
+                    e.printStackTrace();
+                }
+            }
+        
+    4.  Now write some tests for `count()` that use your `countString()` support method and then make assertions about the state of the line counter object afterward. You probably want to provide separate tests for ensuring that the line count is correct, and for ensuring that the character count is correct, as well as at least one test that depends on both values being correct.
+        
+        Remember that in writing string literals, you can use `\n` to represent a "newline" character (i.e., a line termination sequence). Also, note that string literals cannot span multiple lines in Java. Instead, You can write a long string in several pieces, concatenated together using a plus sign (+). This is also a handy trick for keeping long lines under 80 characters in length.
+        
+    5.  Compile your classes and resolve any errors.
+        
+    6.  Run your tests. Since you have not yet implemented your `LineCounter.count()` method, you should expect the tests you have written to fail.
+        
+5.  **Submit your solution**
+    
+    1.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", open the CS 1705 category, and select "Lab 07". Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    2.  At this point, you will not be achieving a high score, since your tests do not pass. That is OK--you'll be implementing the remainder of the class and resubmitting during Part B to get a complete score.
+        
+
+Part B: Counting lines and characters
+-------------------------------------
+
+In Part B of this lab assignment, you will complete your implementation and testing of the `LineCounter` class. If you reach here before half the lab session has passed, switch roles now. Otherwise, you should have already switched roles.
+
+### Procedure
+
+1.  **Implement the `count()` method**
+    
+    1.  Devise a strategy for implementing `count()`. If you are unsure, the simplest path is to use `readLine()` to read the input stream one line at a time. For now, concentrate on tracking only the number of lines processed.
+        
+    2.  You may find it useful to review the information on `readLine()` in the [I/O tutorial](/mod/resource/view.php?id=251#reading).
+        
+    3.  Write the code for `count()`.
+        
+    4.  Compile your code and resolve any errors.
+        
+    5.  Run your tests. Those tests that only depend on line counting should pass--otherwise, resolve any errors. It is OK if tests depending on character counting fail, since you have not added that behavior yet.
+        
+2.  **Add character counting to `count()`**
+    
+    1.  If you have followed the suggestions so far, you have produced a solution that can read from an input string one line at a time, and keep track of the number of lines read. Each line you read with `readLine()` is returned as a `String` object. Further, the `String` object provides a method called `length()`, which returns the number of characters in that string.
+        
+    2.  Using the `length()` method to count the number of characters in each line, modify your code to keep track of the character count as well as the line count.
+        
+    3.  Compile your code and resolve any errors.
+        
+    4.  Run your tests and fix errors as necessary until all tests pass.
+        
+    5.  You can resubmit to Web-CAT as often as you like for feedback.
+        
+3.  **Are you testing `count()` thoroughly?**
+    
+    1.  Discuss this question with your partner. Are there ways that count might fail to work correctly that you are overlooking?
+        
+    2.  Add any new test cases that arise from your discussion, and retest your solution.
+        
+4.  **Add the `countURL()` method**
+    
+    1.  Add the last method to your `LineCounter` class.
+        
+    2.  Try it out on the moodle main page: [http://moodle.cs.vt.edu/](http://moodle.cs.vt.edu/). What results do you get?
+        
+    3.  Add another test case to your test class for `countURL()` that counts the lines and characters on the course's home page and uses `assertEquals()` to test against the values you expect. Compile and test your code, resolving errors as necessary.
+        
+    4.  Compare the numbers your received for line count and character count with students in other pairs. If anyone's numbers disagree, why? If you cannot find the root of the disagreement, both pairs should write further test cases for smaller URLs (say, this [fortunes.txt](http://courses.cs.vt.edu/~cs1705/fortunes.txt) file).
+        
+5.  **Submit your solution**
+    
+    1.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", double-click to open the CS 1705 folder, and select "Lab 07". Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    2.  Fix any errors, warnings, or suggestions that are indicated in the analysis of your submission. Also, note that a large portion of the score will be provided by the TA when she or he reviews your code later, and those points will not show up until then (you should receive e-mail from Web-CAT when the TA has finished the manual part of the grading on-line).
+        
+
+If You Finish Early
+-------------------
+
+If you and your partner finish both parts of this assignment early, think about this question with your partner:
+
+> How would you modify your program to count words?
+
+Try modifying your solution so that it counts "words", in addition to lines and characters. For our purposes, we can consider a word to be any contiguous sequence of non-whitespace characters (the same definition that the ancient `wc` program uses).
+
+Before leaving, check with the TA to pick up your graded homework if it is available.
+----------
+
+[systems]
+language: Java
+

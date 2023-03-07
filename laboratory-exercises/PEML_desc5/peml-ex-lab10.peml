@@ -1,0 +1,169 @@
+title: Time Table
+external_id: peml-ex-program10
+is_public: true
+experience: 25
+language_list: Java
+
+license.id: cc-sa-4.0
+license.owner.email: edwards@cs.vt.edu
+license.owner.name: Stephen Edwards
+
+tags.topics: class, functions
+tags.style: coding problem
+
+instructions:----------
+Goal
+----
+
+In this lab, you are going to implement a simple time table manager that can track appointments. Appointments can be scheduled at any hour of the day on any day of the week. This is an opportunity to work with two-dimensional arrays.
+
+Learning Objectives
+-------------------
+
+*   Exposure to multi-dimensional arrays
+*   Familiarity with arrays
+*   Familiarity with writing constructors
+*   Familiarity with fields
+*   Familiarity with object state
+*   Mastery of creating new classes
+*   Mastery of writing test cases
+*   Mastery of while loops
+
+Part A: Modeling Appointments
+-----------------------------
+
+In Part A of this lab assignment, you will begin write a `TimeTable` class that can record weekly appointments, like class meeting times. It will do this by maintaining internally a two-dimensional array of time entries, where rows represent the day of the week, and columns represent the hour of the day.
+
+Decide which of you will be the **driver** for Part A. The driver should log in. For the remaining instructions in Part A, the driver should do all the typing/mousing. The driver should feel free to ask for advice or bounce ideas off the navigator, and the navigator should look out for errors in what the driver is typing.
+
+### Procedure
+
+1.  **Create a class called `Appointment`**
+    
+    1.  Start BlueJ on your lab machine and create a new project for this lab assignment.
+        
+    2.  Create a new class called `Appointment` using the "New Class" button and the "**Bare Class**" template.
+        
+    3.  Give your new class **two fields**: an `int` representing the hour of the day at which the appointment occurs, and a string representing a description of the appointment. We will use military time to denote hours, so 0 represents midnight, 8 is 8:00am, 20 is 8:00pm, and 23 is 11:00pm.
+        
+    4.  Add a **constructor** to your class that takes two parameters:
+        
+            public Appointment( _/\* use one int parameter followed by one String parameter \*/_ )
+            {
+                _// initialize your fields here_
+            }
+        
+        The initial values for both fields should be assigned in the body of the constructor.
+        
+    5.  Write an accessor called `description()` that returns the description of an appointment.
+        
+    6.  Write an accessor called `hour()` that returns the `int`\-valued hour at which the appointment occurs.
+        
+2.  **Set up a test class**
+    
+    1.  Create a test class for `Appointment`.
+        
+    2.  Decide on your test fixture and set it up. Discuss this with your partner if you are unsure what to do.
+        
+    3.  Add tests for the accessors you have written.
+        
+    4.  Compile and run your tests. Fix any errors.
+        
+3.  **Add mutator methods**
+    
+    1.  Add a mutator method called `setDescription()` that allows an appointment's description to be changed. This mutator should take a single string argument.
+        
+    2.  Add a mutator method called `setHour()` that allows an appointment's time to be changed. This mutator should take a single `int` argument.
+        
+    3.  Write additional tests for these mutators, compile and run them, and fix any errors.
+        
+4.  **Extend the `Appointment` class to handle more readable times**
+    
+    1.  We would like for our appointment class to be a bit more friendly. People usually do not use military hour numbers to refer to times. It might be easier to create appointments if one could enter a time like "10pm" or "9am". Let's do this by adding a new mutator called `setTime()`. This mutator should take a single string parameter that consists of an hour number followed by "am" or "pm". It will set the field inside the appointment by examining the characters of the string. First, create a skeleton of this method that does nothing.
+        
+    2.  Brainstorm tests for this new mutator. Write them in your test class, then compile and run them.
+        
+    3.  Implement this mutator. First, you can use the `substring()` method provided on `String` objects to extract a new string containing all but the last two characters (i.e., just the digits). Then use the `Integer.parseInt()` method to convert the digits into the corresponding number:
+        
+        String digitsOnly = theTime.substring( _/\* what goes here? \*/_ );
+        
+        int hour = Integer.parseInt( digitsOnly );
+        
+    4.  Compile your implementation, run all tests, and fix errors.
+        
+    5.  Now you can write a **second** constructor. Add a new constructor to the class that takes two string parameters: first, a string representing the time, and then a string representing the appointment description. This new constructor can call your new mutator to do part of its work.
+        
+    6.  Write, compile, and run new tests for your new constructor. Now you have two different ways you can create appointment objects: either by specifying the time as an int value, or by specifying it using a more human-readable string.
+        
+5.  **Submit your solution**
+    
+    1.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", open the CS 1705 category, and select "Lab 10". Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    2.  Fix any errors, warnings, or suggestions that are indicated in the analysis of your submission.
+        
+
+Part B: The Time Table
+----------------------
+
+In Part B of this lab assignment, you will write a simple time table class to manage appointments. Internally, your time table should store appointments in a two-dimensional array (sort of like a grid), where rows correspond to days of the week and columns correspond to hours of the day. This simplistic model can only store one appointment for each hour.
+
+As you saw in the `Appointment` class, we will treat hours of the day as integer values from 0 to 23. Similarly, we will treat days of the week as integer values from 0 to 6, with 0 denoting Sunday, 1 denoting Monday, ..., and 6 denoting Saturday.
+
+If you reach here before half the lab session has passed, switch roles now. Otherwise, you should have already switched roles.
+
+### Procedure
+
+1.  **Provide a better string representation for `Appointment`**
+    
+    1.  We would like our appointments to print out in a more readable form like this:
+        
+        10am: CS1705
+        
+        Assume we would like the `toString()` method to produce a string representation like this for an appointment. Write test cases to check that `toString()` produces this format. These test cases will fail until you correctly implement your own version of `toString()`, but write the test cases first.
+        
+    2.  Add a `toString()` method returning a `String` value to your class. Implement so that it produces the desired output format. Compile your code and run your tests until no more errors remain.
+        
+2.  **Create a class called `TimeTable`**
+    
+    1.  Create a new class called `TimeTable` using the template of your choice.
+        
+    2.  Give your new class **one field**: a two-dimensional array of `Appointment` objects (the type should be `Appointment[][]`).
+        
+    3.  Add a **constructor** to your class that takes no parameters. It should create an array object to hold `Appointment`s, with the required number of rows and columns to store a week's worth of appointments.
+        
+3.  **Add mutator and accessor methods**
+    
+    1.  Add a mutator method called `addAppointment()` that takes an integer representing a day and a corresponding `Appointment` object. It should enter the appointment in the timetable (overwriting any previous appointment, if there is one).
+        
+    2.  Add an accessor method called `appointmentFor()` that takes an integer representing a day and a second integer representing an hour. It should return the corresponding appointment, if any, or null if there is no appointment at that time.
+        
+4.  **Set up a test class**
+    
+    1.  Create a test class for `TimeTable`.
+        
+    2.  Decide on your test fixture and set it up. Discuss this with your partner if you are unsure what to do.
+        
+    3.  Add tests for the mutator and accessor that you have written.
+        
+    4.  Compile and run your tests. Fix any errors.
+        
+5.  **Submit your solution**
+    
+    1.  On BlueJ's main menu, select Tools->Submit... from the main menu. Click on "Browse...", double-click to open the CS 1705 folder, and select "Lab 10". Click "OK". Click "Submit". Read the response you receive, and click on any link it provides for more information about your submission.
+        
+    2.  Fix any errors, warnings, or suggestions that are indicated in the analysis of your submission. Also, note that a large portion of the score will be provided by the TA when she or he reviews your code later, and those points will not show up until then (you should receive e-mail from Web-CAT when the TA has finished the manual part of the grading on-line).
+        
+
+If You Finish Early
+-------------------
+
+If you and your partner finish both parts of this assignment early, think about how you might further enhance the `TimeTable` class. One easy addition is to create a `printTimeTable()` method that prints a weekly schedule, producing a header for each day followed by a list of the days scheduled appointments (omitting any hours for which no appointments are scheduled). Try to write such a method.
+
+It is also possible to envision other enhancements, like allowing the day to be specified using the name of a day or a three-letter day abbreviation. Further, it would be nice if the time table also supported the more natural notation for hours of the day when requesting an appointment. Tackle the problem of how to do this **without repeating the code** you previously wrote in the `Appointment` class. Ideally, there should be some way to write this "hour translation" code one time, and then use it in both places--but how?
+
+Before leaving, check with the TA to pick up your graded homework if it is available.
+----------
+
+[systems]
+language: Java
+

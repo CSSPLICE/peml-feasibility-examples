@@ -1,0 +1,134 @@
+title: The Pig Game
+external_id: peml-ex-program4
+is_public: true
+experience: 25
+language_list: Java
+
+license.id: cc-sa-4.0
+license.owner.email: edwards@cs.vt.edu
+license.owner.name: Stephen Edwards
+
+tags.topics: class, functions
+tags.style: coding problem
+
+instructions:----------
+### The Game of Pig
+
+The game of Pig is played between two people who take turns rolling a pair of six-sided dice. The goal is to accumulate 100 points in your _bank_ before your opponent does. On each turn, a player may roll the dice multiple times, accumulating a running sum of _turn points_. After each roll, the player must choose to pass the dice to the other player, banking his/her accumulated points for that turn, or to roll again (be a pig) in an attempt to accumulate more points. However, if a one is rolled on either die, the player forfeits all points accumulated during that turn and must pass the dice to the other player. If both dice show a one (snake eyes), the player forfeits all points accumulated up to that point in the game and must pass the dice to the other player.
+
+For this project you will write a complete Java program that allows a human player to play a game of Pig against the computer. This program will be text-based, following a general flow of interaction similar to the example below.
+
+### Sample Interaction
+
+Player's name? John
+
+    \[ After a couple of turns ... \]
+
+John's turn.      Points: 0     Bank: 25
+    Roll: 3 + 4 = 7     Points: 7     Bank: 25    Roll again? y
+    Roll: 6 + 3 = 9     Points: 16    Bank: 25    Roll again? y
+    Roll: 4 + 4 = 8     Points: 24    Bank: 25    Roll again? n
+    Passing.            Points: 0     Bank: 49
+
+Computer's turn.  Points: 0     Bank: 38
+    Roll: 4 + 6 = 10    Points: 10    Bank: 38    Rolling again.
+    Roll: 5 + 2 = 7     Points: 17    Bank: 38    Rolling again.
+    Roll: 6 + 5 = 11    Points: 28    Bank: 38    NOT rolling again.
+    Passing.            Points: 0     Bank: 66
+
+John's turn.      Points: 0     Bank: 49
+    Roll: 5 + 2 = 7     Points: 7     Bank: 49    Roll again? y
+    Roll: 3 + 1 = 4     Points: 0     Bank: 49    LOSE TURN POINTS
+
+Computer's turn.  Points: 0     Bank: 66
+    Roll: 1 + 1 = 2     Points: 0     Bank: 0     LOSE ALL POINTS
+
+Note: The exact formatting details of your output (spacing, indentation, punctuation, etc.) do not need to match this example exactly. Instead, this example is provided for illustration purposes only. The output requirements are described below in terms of the information that must be presented.
+
+### Design
+
+As in the last assignment, Most aspects of the design of this program are left to you, but make sure you embrace the criteria described in the Program Grading Rubric. Decompose your solution in a logical manner. Consider carefully re-reading the game description and identifying the nouns, choosing which ones make the most sense to use as classes. Carefully assign responsibilities to classes and design methods that perform specific tasks.
+
+You must create a class called `Pig` that contains your `main()` method. Your `main()` method should not contain any significant logic, and should simply create an instance of a class of your own design and call one of its methods to start the game. Consider what other classes you want to use to accomplish this.
+
+In addition, you should definitely consider creating your own class hierarchy to represent a player, so that you can have shared state and behavior between both types of players, but different logic for choosing whether to pass or roll between the human player and the computer player. Think carefully about how to design this hierarchy to minimize differences, and maximize reuse of code. Also think carefully about what state (data) is managed inside each player object, rather than in the game itself.
+
+You should also implement a separate class to represent a single die. The design of this class (as well as how dice are managed and rolled as a pair) is up to you, but consider how to appropriately separate responsibilities into classes that represent objects in the problem, in order to simplify your design and in order to construct clean, understandable methods.
+
+For the computer player, use the following behavior: choose to pass the dice when the current turn's points have reached at least 20, or continue rolling if the total is less than 20. Once your game is working and you are confident in your solution, you can further improve or enhance the logic to produce a better computer opponent.
+
+### Additional Requirements
+
+Your solution must also meet all of the following requirements:
+
+1.  Before play begins, your program must prompt for and read in the human player's name. Think carefully about where you place this code to minimize coupling.
+    
+2.  The human player always takes the first turn.
+    
+3.  At the beginning of each turn for the human player (before any rolls during that turn), the player's name must be printed.
+    
+4.  At a minimum, your code must accept "y" and "n" as valid responses from the human player when deciding to roll again (but you are not limited to just these).
+    
+5.  For each roll, your program must print the total value of the roll, the points earned so far for the current turn, and the current value of the player's "bank", in that order. When a player's turn ends, their current "bank" value must be printed.
+    
+6.  All input for the program will be provided on `System.in`, and all output should be printed on `System.out` (however, you are welcome to use `Scanner` and/or `PrintWriter` objects internally to decouple classes from these choices).
+    
+7.  Be sure that the `Random` objects you create in your code are all `TestableRandom` objects (described in the following section).
+    
+8.  **Important Note**: make sure your program can correctly handle "end of input" part-way through a game and stops successfully. Otherwise, you might have trouble writing a simple test for your main() method.  
+      
+    If you reach end of input on System.in (i.e., no more words to read), it is acceptable to simply end the game without a winner. Alternatively, you could treat it as "the player continually passes for all remaining turns". Still, make sure your game deals with this situation appropriately by terminating--it should **not** throw an exception or go into an infinite loop.
+
+### Testing with java.util.Random
+
+Using `java.util.Random` is great when you need random numbers. It is an excellent tool for adding random behaviors to games and other kinds of programs. However, it does post a testing dilemma: how do you test a method whose behavior is random?
+
+To solve this problem, there is a special subclass of `Random` called `student.TestableRandom`. It behaves just like `java.util.Random` in every way, but adds the ability for **you to control what values it generates inside a test case**.
+
+Consider this example, which prints out ten random numbers between 0-99:
+
+import java.util.Random;
+
+public class RandomExample
+{
+    public static void main(String\[\] args)
+    {
+        Random random = new Random();
+
+        for (int i = 0; i < 10; i++)
+        {
+            System.out.print(random.nextInt(100) + " ");
+        }
+        System.out.println();
+    }
+}
+
+Note: If you've never generated random numbers in Java before the `nextInt(_N_)` method returns a random integer between 0 and _N-_1, inclusive.
+
+How do you test the code shown above? The simple answer is that you cannot easily check the output, since you don't know what it will be.
+
+The easy solution is to change one line in the program. Change the declaration of the variable `random`:
+
+Random random = new student.TestableRandom();
+
+Suddenly, your code becomes testable! You can write a test case like this (assuming you have an import for `student.TestableRandom` at the top of your test class):
+
+public void testRandom()
+{
+    TestableRandom.setNextInts(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);  
+    RandomExample.main(null);
+    assertEquals(
+        "1 2 3 4 5 6 7 8 9 10 \\n",
+        systemOut().getHistory());
+}
+
+The call to `TestableRandom.setNextInts()` takes as many numbers as you like (or an `int[]` array). It predetermines the values that will be returned by any subsequent calls to `nextInt()` (by _any_ `TestableRandom` instance), until all of your supplied values have been used, at which point the method will begin generating new pseudorandom numbers again. There are similar methods to control the doubles, booleans, floats, bytes, or Gaussian-distributed doubles as well.
+
+### Testing
+
+Write exhaustive and well-designed JUnit test cases for all methods in all your classes. Remember that you'll get the most benefit if you _write tests as you write individual methods_. Waiting until after you've written all the code significantly reduces the benefits you receive from testing and makes it more of a chore (while also increasing the amount of bugs in your code). Instead, strive to test each method as you write it, so you will have a full suite of tests for each class, as you complete that class. Then, when you combine pieces together, you already know they are working the way they should and your integration errors will be significantly reduced.
+----------
+
+[systems]
+language: Java
+
