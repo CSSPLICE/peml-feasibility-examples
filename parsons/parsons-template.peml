@@ -1,0 +1,49 @@
+title: [Your name here]
+external_id: [Your ID here]
+is_public: true [DO WE NEED THIS?]
+language_list: C++ [DO WE NEED THIS?]
+
+license.id: cc-sa-4.0 [DO WE NEED THIS?]
+license.owner.email: shaffer@vt.edu [DO WE NEED THIS?]
+license.owner.name: Cliff Shaffer [DO WE NEED THIS?]
+
+tags.topics: parsons problems template
+tags.style: [DO WE NEED THIS?]
+
+parsons.type: {executable|dag} [REQUIRED FOR ALL PARSONS PROBLEMS]
+
+instructions:----------
+[PUT HERE WHAT YOU WANT TO SEE PRECEEDING THE BLOCKS]
+----------
+
+[systems]
+language: C++ [REQUIRED FOR EXECUTE TYPE]
+
+[assets.code.wrapper.files] [REQUIRED FOR EXECUTE TYPE]
+content:----------
+[CODE HERE]
+----------
+
+[assets.code.starter.files] [REQUIRED FOR EXECUTE TYPE]
+content:----------
+[CODE HERE]
+----------
+
+[assets.code.blocks.files] [ALWAYS REQUIRED]
+content:----------
+[CODE HERE]
+----------
+
+
+[assets.test.files] [REQUIRED FOR EXECUTE TYPE]
+format: text/csv-unquoted
+pattern_actual: [IS THIS NEEDED?]
+content:----------
+expected,description
+[PUT TESTS HERE]
+----------
+
+[dag.files] [REQUIRED FOR DAG TYPE]
+content:----------
+[PUT DAG HERE]
+----------
