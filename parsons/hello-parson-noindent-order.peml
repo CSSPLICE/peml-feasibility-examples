@@ -12,16 +12,24 @@ on the right.
 ----------
 
 [assets.code.blocks.files]
-content:----------
+[.content]
 tag: one
-print 'Problems!'
+code: print 'Problems!'
 
 tag: two
-print 'Parsons'
+code: print 'Parsons'
 
 tag: three
-print 'Hello'
-----------
+code: print 'Hello'
+tag: four
+code:=====
+multiple
+lines
+   with indentation
+   and any special markup
+if you need it
+=====
+[]
 
 [assets.test.files]
 content:----------
