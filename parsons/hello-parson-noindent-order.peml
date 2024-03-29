@@ -1,0 +1,31 @@
+title: Your First Parsons Problem -- Ordered
+
+tags.topics: Intro Parsons Problem
+tags.style: parsons, order
+
+instructions:----------
+**Your task**: Construct a Python program that prints strings "Hello",
+"Parsons", and "Problems" on their own lines. You can get feedback on
+your current solution with the feedback button. You should construct
+your program by dragging and dropping the lines to the solution area
+on the right.
+----------
+
+[assets.code.blocks.files]
+content:----------
+tag: one
+print 'Problems!'
+
+tag: two
+print 'Parsons'
+
+tag: three
+print 'Hello'
+----------
+
+[assets.test.files]
+content:----------
+one:
+two: one
+three: two
+----------
