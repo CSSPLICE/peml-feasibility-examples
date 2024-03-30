@@ -11,24 +11,16 @@ your program by dragging and dropping the lines to the solution area
 on the right.
 ----------
 
-[assets.code.blocks.files]
+[assets.code.starter.files]
 [.content]
 tag: one
-code: print 'Problems!'
+code: print('Hello')
 
 tag: two
-code: print 'Parsons'
+code: print('Parsons')
 
 tag: three
-code: print 'Hello'
-tag: four
-code:=====
-multiple
-lines
-   with indentation
-   and any special markup
-if you need it
-=====
+code: print('Problems!')
 []
 
 [assets.test.files]

@@ -16,20 +16,19 @@ on the right.
 
 [assets.code.wrapper.files]
 content:----------
-[Sorry, I don't know enough about Python to know if we need wrapper code!]
     ___
 ----------
 
-[assets.code.blocks.files]
-content:----------
+[assets.code.starter.files]
+[.content]
 tag: one
-print 'Problems!'
+print ('Hello')
 
 tag: two
-print 'Parsons'
+print ('Parsons')
 
 tag: three
-print 'Hello'
+print ('Problems!')
 ----------
 
 [assets.test.files]
