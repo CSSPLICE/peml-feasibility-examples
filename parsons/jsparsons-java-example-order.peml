@@ -1,9 +1,11 @@
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/jsparsons-java-example-order.peml
 
-title: Simple js-parsons pseudocode example assignment - order
+title: Simple js-parsons Java example assignment - order
 author: Cliff Shaffer (from js-Parsons, converted to PEML)
+license.id: MIT
+license.owner: Cliff Shaffer
 
-tags.topics: Intro Parsons Problem
+tags.topics: PEML Demo Parsons Problem
 tags.style: parsons, indent, order
 
 instructions:----------
