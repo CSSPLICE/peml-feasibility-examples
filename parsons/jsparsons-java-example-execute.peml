@@ -1,0 +1,49 @@
+exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/jsparsons-java-example-execute.peml
+
+title: Simple js-parsons pseudocode example assignment - execute
+author: Cliff Shaffer (from js-Parsons, converted to PEML)
+
+tags.topics: Intro Parsons Problem
+tags.style: parsons, indent, execute
+
+instructions:----------
+Construct code by reordering and indenting the lines.
+----------
+
+[systems]
+language: Java
+
+[assets.code.wrapper.files]
+content:----------
+public class Parsons {
+
+    public static void main(String[] args) {
+    ___
+    }
+}
+----------
+
+[assets.code.starter.files]
+[.content]
+tag: one
+code: for (int i=0;i<3;i++) {
+
+tag: two
+code: System.out.print("I ");
+
+tag: three
+code: System.out.print("am ");
+
+tag: four
+code: System.out.print("a Java program ");
+
+tag: five
+code: }
+[]
+
+[assets.test.files]
+format: text/csv-unquoted
+content:----------
+expected,description
+I am a Java program I am a Java program I am a Java program
+----------

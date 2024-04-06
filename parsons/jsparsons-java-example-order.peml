@@ -1,0 +1,38 @@
+exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/jsparsons-java-example-order.peml
+
+title: Simple js-parsons pseudocode example assignment - order
+author: Cliff Shaffer (from js-Parsons, converted to PEML)
+
+tags.topics: Intro Parsons Problem
+tags.style: parsons, indent, order
+
+instructions:----------
+Construct code by reordering and indenting the lines.
+----------
+
+[assets.code.starter.files]
+[.content]
+tag: one
+code: for (int i=0;i<3;i++) {
+
+tag: two
+code: System.out.print("I ");
+
+tag: three
+code: System.out.print("am ");
+
+tag: four
+code: System.out.print("a Java program ");
+
+tag: five
+code: }
+[]
+
+[assets.test.files]
+content:----------
+one:
+two: one
+three: two
+four: three
+five: four
+----------
