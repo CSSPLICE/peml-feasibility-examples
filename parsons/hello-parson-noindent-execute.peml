@@ -1,3 +1,10 @@
+# Simple example of a problem that is assessed by executing code and
+# comparing the result to the given string. (Note that this is not
+# really test cases -- there are no input/ouput pairs since there is
+# no input).
+# This is a Python example.
+# Derived from jsParsons hello-parson.html.
+
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/hello-parson-noindent-execute.peml
 
 title: Your First Parsons Problem -- Execute
@@ -23,13 +30,13 @@ content:----------
 [assets.code.starter.files]
 [.content]
 tag: one
-code: print('Hello')
+display: print('Hello')
 
 tag: two
-code: print('Parsons')
+display: print('Parsons')
 
 tag: three
-code: print('Problems!')
+display: print('Problems!')
 []
 
 [assets.test.files]

@@ -1,3 +1,7 @@
+# Simple example of a problem that is assessed by the order of the
+# blocks.
+# Derived from jsParsons hello-parson.html.
+
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/hello-parson-noindent-order.peml
 
 title: Your First Parsons Problem -- Ordered
@@ -15,15 +19,16 @@ instructions:----------
 [assets.code.starter.files]
 [.content]
 tag: one
-code: print('Hello')
+display: print('Hello')
 
 tag: two
-code: print('Parsons')
+display: print('Parsons')
 
 tag: three
-code: print('Problems!')
+display: print('Problems!')
 []
 
+# A (simple) DAG -- there is only one acceptable order
 [assets.test.files]
 content:----------
 one:

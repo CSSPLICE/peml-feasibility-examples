@@ -1,8 +1,7 @@
-# Simple example of a problem that is assessed by executing code and
-# comparing the result to the given string. (Note that this is not
-# really test cases -- there are no input/ouput pairs since there is
-# no input).
-# This is a Java exercise.
+# Example of using executable "pseudocode". In this case, what
+# displays to the user looks like Java (these are defined by the
+# "display" lines of the blocks). What gets sent to be executed is
+# defined by the "code" lines of the blocks, and this is Python code.
 # Correct indentation is required.
 # Derived from jsParsons java-example.html.
 
@@ -21,38 +20,38 @@ Construct code by reordering and indenting the lines.
 ----------
 
 [systems]
-language: Java
+language: Python
 
 [assets.code.wrapper.files]
 content:----------
-public class Parsons {
-
-    public static void main(String[] args) {
     ___
-    }
-}
 ----------
 
 [assets.code.starter.files]
 [.content]
 tag: one
 display: for (int i=0;i<3;i++) {
+code: for i in range(3):
 indent: 0
 
 tag: two
 display: System.out.print("I ");
+code: print('I ', end='')
 indent: 1
 
 tag: three
 display: System.out.print("am ");
+code: print('am ', end='')
 indent: 1
 
 tag: four
 display: System.out.print("a Java program ");
+code: print('a Java program ', end='')
 indent: 1
 
 tag: five
 display: }
+code:
 indent: 0
 []
 
