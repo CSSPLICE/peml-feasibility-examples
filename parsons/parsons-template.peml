@@ -24,16 +24,17 @@ content:----------
 [CODE HERE]
 ----------
 
-[assets.code.starter.files] [REQUIRED FOR EXECUTE TYPE]
+[assets.code.starter.files] [ALWAYS REQUIRED]
 content:----------
-[CODE HERE]
-----------
+[CODE HERE: This should consist of one or more TAG objects]
 
-[assets.code.blocks.files] [ALWAYS REQUIRED]
-content:----------
-[CODE HERE]
-----------
+tag: <name>
+display: <What gets shown for this block>
+code: <Executed code> [OPTIONAL: If provided in an EXECUTE type, then
+                       this gets executed instead of what is in "display:"]
+indent: 1 [OPTIONAL: indent level. If any tags have indent, then all must.]
 
+----------
 
 [assets.test.files] [REQUIRED FOR EXECUTE TYPE]
 format: text/csv-unquoted

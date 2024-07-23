@@ -2,8 +2,10 @@
 # displays to the user looks like Java (these are defined by the
 # "display" lines of the blocks). What gets sent to be executed is
 # defined by the "code" lines of the blocks, and this is Python code.
-# Correct indentation is required.
-# Derived from jsParsons java-example.html.
+# This is not using test cases -- there are no input/output pairs
+# since there is no input. Correct indentation is required.
+# Derived from jsParsons
+# https://github.com/js-parsons/js-parsons/blob/master/examples/java-example.html
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/jsparsons-java-example-execute.peml
 

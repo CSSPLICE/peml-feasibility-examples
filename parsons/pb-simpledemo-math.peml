@@ -1,6 +1,6 @@
 # Simple ProofBlocks demo proof problem. Primarily, this illustrates a
-# (slightly) non-trivial DAG. This version does NOT use any math formatting.
-# Sourcecode: See
+# (slightly) non-trivial DAG. Illustrates the use of $$ delimiters for
+# LaTeX math formatting. Sourcecode: See
 # https://github.com/PrairieLearn/PrairieLearn/blob/master/exampleCourse/questions/element/orderBlocks/question.html
 # Demo: See
 # https://us.prairielearn.com/pl/course/108/question/9058236/preview,
@@ -17,23 +17,23 @@ tags.topics: PEML Demo Parsons Problem
 tags.style: parsons, noindent, order
 
 instructions:----------
-Prove that (A AND B AND C) implies (A AND C).
+Prove that $$A \land B \land C) \rightarrow A \land C$$.
 ----------
 
 [assets.code.starter.files]
 [.content]
 
 tag: one
-display: Assume A AND B AND C.
+display: Assume $$A \land B \land C$$.
 
 tag: two
-display: Then A is TRUE.
+display: Then $$A$$ is true.
 
 tag: three
-display: Then C is TRUE.
+display: Then $$C$$ is true.
 
 tag: four
-display: Since A and C are TRUE, we know (A AND C) is TRUE.
+display: Since $$A$$ and $$C$$, we know $$A \land C$$.
 []
 
 [assets.test.files]

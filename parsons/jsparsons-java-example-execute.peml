@@ -1,10 +1,10 @@
 # Simple example of a problem that is assessed by executing code and
-# comparing the result to the given string. (Note that this is not
-# really test cases -- there are no input/ouput pairs since there is
-# no input).
+# comparing the result to the given string. This is not using test
+# cases -- there are no input/output pairs since there is no
+# input. Correct indentation is required.
 # This is a Java exercise.
-# Correct indentation is required.
-# Derived from jsParsons java-example.html.
+# Derived from jsParsons
+# https://github.com/js-parsons/js-parsons/blob/master/examples/java-example.html
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/jsparsons-java-example-execute.peml
 
