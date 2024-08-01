@@ -70,6 +70,10 @@ display:----------
 
 [assets.test.files]
 format: text/csv-unquoted
+template:
+  int[] values = {{arr}};
+  subject.Swap(values, {{i}}, {{j});
+  AssertEquals({{expected}}, values);
 content:----------
 arr,i,j,expected,description
 "new int[]{1, 2, 3, 4}", 2, 3, "new int[]{1,2,4,3}",example
