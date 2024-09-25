@@ -1,0 +1,53 @@
+{
+  "exercise_id": "https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/swap1-order-CW.peml",
+  "name": "Swap1_execute",
+  "external_id": "Swap1_execute",
+  "is_public": "true",
+  "experience": "40",
+  "language_list": "Java",
+  "author": "Cliff Shaffer",
+  "license": {
+    "id": "cc-sa-4.0",
+    "owner": {
+      "email": "lcao2@uncc.edu",
+      "name": "lcao2"
+    }
+  },
+  "tags": {
+    "topics": "String, loop",
+    "style": "coding problem"
+  },
+  "instructions": "Write a function to swap two elements in the array by reordering the\nlines. Your function should return the array.\n",
+  "systems": [
+    {
+      "language": "Java"
+    }
+  ],
+  "assets": {
+    "code": {
+      "wrapper": {
+        "files": [
+          {
+            "content": "public class Answer\n{\n    ___\n}\n"
+          }
+        ]
+      },
+      "starter": {
+        "files": [
+          {
+            "content": "public int[] Swap(int[] arr, int i, int j)\n{\n   ___\n}\n"
+          }
+        ]
+      }
+    },
+    "test": {
+      "files": [
+        {
+          "format": "text/csv-unquoted",
+          "pattern_actual": "subject.Swap({{arr,i,j}})",
+          "content": "arr,i,j,expected,description\nnew int[]{1, 2, 3, 4}, 2, 3, new int[]{1,2,4,3},example\nnew int[]{1, 2, 3, 4}, 0, 3, new int[]{4,2,3,1},hidden\n"
+        }
+      ]
+    }
+  }
+}

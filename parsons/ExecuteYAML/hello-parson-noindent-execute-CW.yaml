@@ -1,0 +1,49 @@
+# Simple example of a problem that is assessed by executing code and
+# comparing the result to the given string. This is not using test
+# cases -- there are no input/output pairs since there is no
+# input. No indentation is expected/supported.
+# This is a Python example.
+# Derived from jsParsons
+# https://github.com/js-parsons/js-parsons/blob/master/examples/hello-parson-noindent.html
+
+# WARNING! This was not created by converting the .peml file to
+# .yaml. This was hand generated for now.
+
+---
+name: Your First Parsons Problem -- Execute
+external_id: JSparsons-hello-parson
+is_public: false
+experience: 40
+language_list: Python
+style_list: parsons
+tag_list: demo
+current_version:
+  version: 1
+  creator: shaffer@vt.edu
+  prompts:
+  - coding_prompt:
+      position: 1
+      question: |
+        **Your task**: Construct a Python program that prints strings "Hello", "Parsons", and "Problems" on their own lines. You can get feedback on your current solution with the feedback button. You should construct your program by dragging and dropping the lines to the solution area on the right.
+      feedback: ''
+      class_name: Answer
+      method_name: main
+      starter_code: |
+            ___
+      wrapper_code: '___
+
+'
+      tests: |
+        import pythy
+        
+        # -------------------------------------------------------------
+        class HelloTest(pythy.TestCase):
+        
+            # -------------------------------------------------------------
+            def setUp(self):
+                if not hasattr(self, 'output'):
+                    (self.mylocals, self.output) = self.runFile('Answer.py')
+
+            # Description: Output -> 'Hello\nParsons\nProblems!\n'
+            def test1(self):
+                self.assertEqual('Hello\nParsons\nProblems!\n', self.output)
