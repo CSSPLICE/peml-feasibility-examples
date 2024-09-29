@@ -9,7 +9,8 @@ exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/par
 title: Your First Parsons Problem -- Ordered
 author: Cliff Shaffer (from js-Parsons, converted to PEML)
 license.id: MIT
-license.owner: Cliff Shaffer
+license.owner.name: Cliff Shaffer
+license.owner.email: shaffer@vt.edu
 
 tags.topics: PEML Demo Parsons Problem
 tags.style: parsons, order
@@ -20,17 +21,17 @@ instructions:----------
 
 [assets.code.starter.files]
 [.content]
-tag: one
+blockid: one
 display: print('Hello')
 
-tag: two
+blockid: two
 display: print('Parsons')
 
-tag: three
+blockid: three
 display: print('Problems!')
 []
 
-# A (simple) DAG -- there is only one acceptable order
+# A (trivial) DAG -- there is only one acceptable order
 [assets.test.files]
 content:----------
 one:

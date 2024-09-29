@@ -9,9 +9,9 @@
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/hello-parson-noindent-execute.peml
 
 title: Your First Parsons Problem -- Execute
-author: Cliff Shaffer (from js-Parsons, converted to PEML)
 license.id: MIT
-license.owner: Cliff Shaffer
+license.owner.name: Cliff Shaffer
+license.owner.email: shaffer@vt.edu
 
 tags.topics: PEML Demo Parsons Problem
 tags.style: parsons, execute
@@ -30,13 +30,13 @@ content:----------
 
 [assets.code.starter.files]
 [.content]
-tag: one
+blockid: one
 display: print('Hello')
 
-tag: two
+blockid: two
 display: print('Parsons')
 
-tag: three
+blockid: three
 display: print('Problems!')
 []
 

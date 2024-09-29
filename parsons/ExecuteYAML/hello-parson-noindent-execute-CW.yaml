@@ -12,10 +12,8 @@
 ---
 name: Your First Parsons Problem -- Execute
 external_id: JSparsons-hello-parson
-is_public: false
-experience: 40
 language_list: Python
-style_list: parsons
+style_list: parsons, execute
 tag_list: demo
 current_version:
   version: 1

@@ -1,23 +1,26 @@
-title: [Your name here]
+exercise_id: [Raw text string]
+title: [Your title here]
 external_id: [Your ID here]
-is_public: true [DO WE NEED THIS?]
-language_list: C++ [DO WE NEED THIS?]
 
-license.id: cc-sa-4.0 [DO WE NEED THIS?]
-license.owner.email: shaffer@vt.edu [DO WE NEED THIS?]
-license.owner.name: Cliff Shaffer [DO WE NEED THIS?]
+# License block: You need either this, or else an author: tag.
+license.id: [A string from the license keywords used by github]
+license.owner.email: [Your email address]
+license.owner.name: [Your name]
 
-tags.topics: parsons problems template
-tags.style: [DO WE NEED THIS?]
-
-parsons.type: {executable|dag} [REQUIRED FOR ALL PARSONS PROBLEMS]
+tags.style: parsons, [order | executable], <indent>
+Required: Specifies that this is a Parsons problem. Order specifies
+that grading is done by checking the block order against a
+DAG. Executable specifies that grading is done by executing the blocks
+as program code. If the tag "indent" is added, this means that
+solutions are required to match the indentation indicated by the
+block definitions.
 
 instructions:----------
 [PUT HERE WHAT YOU WANT TO SEE PRECEEDING THE BLOCKS]
 ----------
 
 [systems]
-language: C++ [REQUIRED FOR EXECUTE TYPE]
+language: C++ [SOME LANGUAGE REQUIRED FOR EXECUTE TYPE]
 
 [assets.code.wrapper.files] [REQUIRED FOR EXECUTE TYPE]
 content:----------
@@ -26,9 +29,9 @@ content:----------
 
 [assets.code.starter.files] [ALWAYS REQUIRED]
 content:----------
-[CODE HERE: This should consist of one or more TAG objects]
+[CODE HERE: This should consist of one or more BLOCKID objects]
 
-tag: <name>
+blockid: <name>
 display: <What gets shown for this block>
 code: <Executed code> [OPTIONAL: If provided in an EXECUTE type, then
                        this gets executed instead of what is in "display:"]

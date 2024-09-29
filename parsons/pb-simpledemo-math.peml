@@ -17,23 +17,23 @@ tags.topics: PEML Demo Parsons Problem
 tags.style: parsons, noindent, order
 
 instructions:----------
-Prove that $$A \land B \land C) \rightarrow A \land C$$.
+Prove that $A \land B \land C) \rightarrow A \land C$.
 ----------
 
 [assets.code.starter.files]
 [.content]
 
-tag: one
-display: Assume $$A \land B \land C$$.
+blockid: one
+display: Assume $A \land B \land C$.
 
-tag: two
-display: Then $$A$$ is true.
+blockid: two
+display: Then $A$ is true.
 
-tag: three
-display: Then $$C$$ is true.
+blockid: three
+display: Then $C$ is true.
 
-tag: four
-display: Since $$A$$ and $$C$$, we know $$A \land C$$.
+blockid: four
+display: Since $A$ and $C$, we know $A \land C$.
 []
 
 [assets.test.files]

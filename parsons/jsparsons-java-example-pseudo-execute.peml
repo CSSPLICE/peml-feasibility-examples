@@ -12,7 +12,8 @@ exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/par
 title: Simple js-parsons Java example assignment - execute
 author: Cliff Shaffer (from js-Parsons, converted to PEML)
 license.id: MIT
-license.owner: Cliff Shaffer
+license.owner.name: Cliff Shaffer
+license.owner.email: shaffer@vt.edu
 
 tags.topics: PEML Demo Parsons Problem
 tags.style: parsons, indent, execute
@@ -31,27 +32,27 @@ content:----------
 
 [assets.code.starter.files]
 [.content]
-tag: one
+blockid: one
 display: for (int i=0;i<3;i++) {
 code: for i in range(3):
 indent: 0
 
-tag: two
+blockid: two
 display: System.out.print("I ");
 code: print('I ', end='')
 indent: 1
 
-tag: three
+blockid: three
 display: System.out.print("am ");
 code: print('am ', end='')
 indent: 1
 
-tag: four
+blockid: four
 display: System.out.print("a Java program ");
 code: print('a Java program ', end='')
 indent: 1
 
-tag: five
+blockid: five
 display: }
 code:
 indent: 0

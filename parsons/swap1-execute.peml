@@ -17,9 +17,11 @@ language_list: Java
 
 author: Cliff Shaffer
 license.id: MIT
+license.owner.name: Cliff Shaffer
+license.owner.email: shaffer@vt.edu
 
 tags.topics: PEML Demo Parsons Problem
-tags.style: parsons, noindent, java, execute
+tags.style: parsons, execute
 
 instructions:----------
 Write a function to swap two elements in the array by reordering the
@@ -45,26 +47,27 @@ public int[] Swap(int[] arr, int i, int j)
 {
 ----------
 
-tag: one
-    display: int temp = arr[i];
+blockid: one
+display: int temp = arr[i];
 
 # This happens to be a distractor, but it could actually be used
 # in place of block "one" just fine. There is nothing special about
 # the marking of a distractor block in a problem evaluated by
 # execution.
-tag: onea
-    display: int temp = arr[i];
+blockid: onea
+display: int temp = arr[i];
 
-tag: two
-    display: arr[i] = arr[j];
+blockid: two
+display: arr[i] = arr[j];
 
-tag: three
-    display: arr[j] = temp;
+blockid: three
+display: arr[j] = temp;
 
-tag: four
-    display: int temp = arr[j];
+# This is a distractor
+blockid: four
+display: int temp = arr[j];
 
-tag: fixed
+blockid: fixed
 display:----------
     return arr;
 }

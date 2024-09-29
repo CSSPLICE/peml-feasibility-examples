@@ -11,10 +11,11 @@ exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/par
 title: ProofBlocks Simple Proof Demo
 author: Cliff Shaffer (from ProofBlocks demo problem)
 license.id: MIT
-license.owner: Cliff Shaffer
+license.owner.name: Cliff Shaffer
+license.owner.email: shaffer@vt.edu
 
 tags.topics: PEML Demo Parsons Problem
-tags.style: parsons, noindent, order
+tags.style: parsons, order
 
 instructions:----------
 Prove that (A AND B AND C) implies (A AND C).
@@ -23,16 +24,16 @@ Prove that (A AND B AND C) implies (A AND C).
 [assets.code.starter.files]
 [.content]
 
-tag: one
+blockid: one
 display: Assume A AND B AND C.
 
-tag: two
+blockid: two
 display: Then A is TRUE.
 
-tag: three
+blockid: three
 display: Then C is TRUE.
 
-tag: four
+blockid: four
 display: Since A and C are TRUE, we know (A AND C) is TRUE.
 []
 
