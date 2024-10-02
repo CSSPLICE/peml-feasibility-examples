@@ -1,0 +1,44 @@
+---
+exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/swap1-order-CWb.peml
+title: Swap1_executeb
+external_id: Swap1_executeb
+license:
+  id: MIT
+  owner:
+    name: Cliff Shaffer
+    email: shaffer@vt.edu
+tags:
+  topics: 'PEML Demo Parsons Problem: Swap'
+  style: parsons, execute
+instructions: |
+  Write a function to swap two elements in the array by reordering the
+  lines. Your function should return the array.
+systems:
+- language: Java
+assets:
+  code:
+    wrapper:
+      files:
+      - content: |
+          public class Answer
+          {
+              ___
+          }
+    starter:
+      files:
+      - content: |
+          public int[] Swap(int[] arr, int i, int j)
+          {
+             ___
+          }
+  test:
+    files:
+    - format: text/csv-unquoted
+      template: |2-
+          int[] values = {{arr}};
+          subject.Swap(values, {{i}}, {{j}});
+          AssertEquals({{expected}}, values);
+      content: |
+        arr,i,j,expected,description
+        new int[]{1, 2, 3, 4}, 2, 3, new int[]{1,2,4,3},example
+        new int[]{1, 2, 3, 4}, 0, 3, new int[]{4,2,3,1},hidden

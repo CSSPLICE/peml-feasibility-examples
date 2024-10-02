@@ -1,14 +1,3 @@
-# Simple example of a problem that is assessed by executing code and
-# comparing the result to the given string. This is not using test
-# cases -- there are no input/output pairs since there is no
-# input. No indentation is expected/supported.
-# This is a Python example.
-# Derived from jsParsons
-# https://github.com/js-parsons/js-parsons/blob/master/examples/hello-parson-noindent.html
-
-# WARNING! This was not created by converting the .peml file to
-# .yaml. This was hand generated for now.
-
 ---
 name: Your First Parsons Problem -- Execute
 external_id: JSparsons-hello-parson
