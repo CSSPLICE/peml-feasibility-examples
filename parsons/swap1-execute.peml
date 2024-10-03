@@ -9,7 +9,7 @@
 # indistinguishable from another block, but it doesn't matter which
 # one is actually used.
 
-exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/swap1-order.peml
+exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/swap1-execute.peml
 
 title: Swap1 - execute
 external_id: Swap1 - execute
@@ -19,7 +19,7 @@ license.owner.name: Cliff Shaffer
 license.owner.email: shaffer@vt.edu
 
 tags.topics: PEML Demo Parsons Problem
-tags.style: code writing
+tags.style: parsons, execute
 
 instructions:----------
 Write a function to swap two elements in the array by reordering the
