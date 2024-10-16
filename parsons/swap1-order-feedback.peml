@@ -2,12 +2,12 @@
 # Technically this is a Java exercise, but this is a moot point
 # because the assessment is by block order.
 # No indentation is required.
-# Illustrates fixed code shown to students
-# Illustrates a multi-line block
-# Illustrates two forms of distractor. One is a "ganged" distractor
-# where the user must pick exactly one of the gang (many systems will
-# give visual signaling that these are ganged). The other is a block
-# that cannot appear in the answer.
+# Illustrates fixed code shown to students.
+# Illustrates a multi-line block.
+# Illustrates two forms of distractor. One is a "pick-one" distractor
+# where the user must pick exactly one of a group of blocks (many
+# systems will give visual signaling that these are grouped).
+# The other is a block that cannot appear in the answer.
 # Illustrates feedback for the distractors.
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/swap1-order.peml
@@ -32,8 +32,8 @@ public static void Swap(int[] arr, int i, int j)
 {
 ----------
 
-blockid: gang1
-[.gang]
+blockid: group1
+[.pickone]
 blockid: one
 display: int temp = arr[i];
 

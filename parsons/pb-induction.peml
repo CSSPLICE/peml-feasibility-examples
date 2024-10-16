@@ -1,6 +1,6 @@
 # More complicated ProofBlocks proof problem.
-# Primarily this demonstrates lots of ganged blocks, and the gangs
-# appear in an order.
+# Primarily this demonstrates lots of blocks grouped into "pick-ones",
+# and also lots of math.
 # Demo: See https://us.prairielearn.com/pl/course_instance/131329/instructor/question/9086395/preview
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-induction.peml
@@ -33,7 +33,7 @@ blockid: predicate
 display: Inductive Predicate: $P(n): \sum_{j=0}^n 2(-7)^j = \frac{1-(-7)^{n+1}}{4}$">
 
 blockid: basecase
-[.gang]
+[.pickone]
 blockid: base1
 display: Base case: At $n=0$, $\sum_{j=0}^n 2(-7)^j = 2$ and $\frac{1-(-7)^{n+1}}{4} = \frac{1-(-7)}{4} = 2$, so the base case $P(0)$ holds.
 
@@ -43,7 +43,7 @@ feedback: Wrong choice
 []
 
 blockid: IH
-[.gang]
+[.pickone]
 blockid: IH1
 display: Inductive Hypothesis: Suppose that $P(n):$ $\sum_{j=0}^n 2(-7)^j = \frac{1-(-7)^{n+1}}{4}$ holds.
 feedback: Wrong choice.
@@ -53,7 +53,7 @@ display: Inductive Hypothesis: Suppose that $P(n):$ $\sum_{j=0}^n 2(-7)^j = \fra
 []
 
 blockid: IS
-[.gang]
+[.pickone]
 blockid: IS1
 display: Inductive Step: We need to show that $P(k+1):$ $\sum_{j=0}^{k} 2(-7)^j = \frac{1-(-7)^{k+2}}{4}$ holds.
 feedback: Wrong choice
@@ -66,7 +66,7 @@ blockid: left
 display: The left hand side is $\sum_{j=0}^{k+1} 2(-7)^j = \sum_{j=0}^k 2(-7)^j + 2(-7)^{k+1}$"> The left hand side is $\sum_{j=0}^{k+1} 2(-7)^j = \sum_{j=0}^k 2(-7)^j + 2(-7)^{k+1}$.
 
 blockid: useIH
-[.gang]
+[.pickone]
 blockid: useIH1
 display: By the inductive hypothesis we have $\sum_{j=0}^{k+1} 2(-7)^j = \sum_{j=0}^k 2(-7)^j + 2(-7)^{k+1}$. So then substituting we get $\frac{1-(-7)^{k+1}}{4} + 2(-7)^{k+1}$ $= \frac{1-(-7)^{k+1} + 8(-7)^{k+1}}{4}$ $= \frac{1+7(-7)^{k+1}}{4}$ which simplifies to $= \frac{1-(-7)^{k+2}}{4}$
 feedback: Wrong choice
