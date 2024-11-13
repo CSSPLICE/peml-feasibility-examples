@@ -5,6 +5,8 @@
 # Demo: See
 # https://us.prairielearn.com/pl/course/108/question/9058236/preview,
 # Example 4.
+# This version uses explicit definition of the DAG using the
+# [assets.test.files] section.
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-simpledemo.peml
 
