@@ -43,6 +43,7 @@ display: Random Group 2 Block 3
 blockid: fixed
 display: Fixed End
 []
+[]
 
 # Note that the DAG only indicates the relative positioning of the
 # adjustable blocks. It is the responsibility of the system
@@ -58,5 +59,4 @@ randomg1b3: randomg1b2
 randomg2b1: randomg1b3
 randomg2b2: randomg2b1
 randomg2b3: randomg2b2
-
 ----------

@@ -55,7 +55,7 @@ feedback: This line should not appear in the answer.
 blockid: fixed
 display: }
 []
-
+[]
 
 # The parent dependency for blocks "onea" and "four" are -1, meaning
 # that they are distractors and should not appear in the solution.
@@ -67,3 +67,4 @@ two: one
 three: two
 four: -1
 ----------
+[]

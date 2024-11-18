@@ -20,12 +20,14 @@ The constructed code should print the minimum of variables a and b.
 
 [systems]
 language: Python
+[]
 
 [assets.code.wrapper.files]
 content:----------
 a = 4
 b = 2
 ----------
+[]
 
 [assets.code.starter.files]
 [.content]
@@ -41,6 +43,7 @@ display: else
 blockid four
 display: print(b)
 []
+[]
 
 [assets.test.files]
 format: text/csv-unquoted
@@ -48,3 +51,4 @@ content:----------
 expected,description
 2
 ----------
+[]

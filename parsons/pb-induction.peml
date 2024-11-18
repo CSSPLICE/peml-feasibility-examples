@@ -78,6 +78,7 @@ By the inductive hypothesis we have $\sum_{j=0}^k 2(-7)^j = \frac{1-(-7)^{k+1}}{
 blockid: final
 display: So $\sum_{j=0}^{k+1} 2(-7)^j = \frac{1-(-7)^{k+2}}{4}$, which was what we needed to show.
 []
+[]
 
 [assets.test.files]
 content:----------
@@ -94,3 +95,4 @@ useIH1: -1
 useIH2: left
 final: useIH2
 ----------
+[]

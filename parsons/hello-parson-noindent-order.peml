@@ -30,6 +30,7 @@ display: print('Parsons')
 blockid: three
 display: print('Problems!')
 []
+[]
 
 # A (trivial) DAG -- there is only one acceptable order
 [assets.test.files]
@@ -38,3 +39,4 @@ one:
 two: one
 three: two
 ----------
+[]

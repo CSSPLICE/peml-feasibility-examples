@@ -67,6 +67,7 @@ Fixed End
       This block appears at the end.
 ----------
 []
+[]
 
 # Note that the DAG only indicates the relative positioning of the
 # adjustable blocks. It is the responsibility of the system

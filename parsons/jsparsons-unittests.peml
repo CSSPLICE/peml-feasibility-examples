@@ -19,11 +19,13 @@ Your task is to construct a function which returns the index of the largest elem
 
 [systems]
 language: Python
+[]
 
 [assets.code.wrapper.files]
 content:----------
     ___
 ----------
+[]
 
 [assets.code.starter.files]
 [.content]
@@ -57,6 +59,7 @@ display: while True
 blockid: d2
 display: pass
 []
+[]
 
 [assets.test.files]
 format: text/csv-unquoted
@@ -68,3 +71,4 @@ arr,expected,description
 [7, 2, 4], 0, hidden
 [7, 8, 4], 1, example
 ----------
+[]

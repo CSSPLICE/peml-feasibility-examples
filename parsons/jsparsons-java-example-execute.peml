@@ -23,6 +23,7 @@ Construct code by reordering and indenting the lines.
 
 [systems]
 language: Java
+[]
 
 [assets.code.wrapper.files]
 content:----------
@@ -33,6 +34,7 @@ public class Parsons {
     }
 }
 ----------
+[]
 
 [assets.code.starter.files]
 [.content]
@@ -56,6 +58,7 @@ blockid: five
 display: }
 indent: 0
 []
+[]
 
 [assets.test.files]
 format: text/csv-unquoted
@@ -63,3 +66,4 @@ content:----------
 expected,description
 I am a Java program I am a Java program I am a Java program
 ----------
+[]

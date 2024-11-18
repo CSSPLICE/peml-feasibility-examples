@@ -38,6 +38,7 @@ display: Then C is TRUE.
 blockid: four
 display: Since A and C are TRUE, we know (A AND C) is TRUE.
 []
+[]
 
 [assets.test.files]
 content:----------
@@ -46,3 +47,4 @@ two: one
 three: one
 four: two, three
 ----------
+[]

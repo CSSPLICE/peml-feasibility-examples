@@ -42,6 +42,7 @@ blockid: five
 display: }
 indent: 0
 []
+[]
 
 [assets.test.files]
 content:----------
@@ -51,3 +52,4 @@ three: two
 four: three
 five: four
 ----------
+[]
