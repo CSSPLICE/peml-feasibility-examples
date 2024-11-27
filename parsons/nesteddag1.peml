@@ -49,7 +49,7 @@ display:----------
 []
 
 # Specify the nested DAG.
-# This defines three sub-dags, all of which have no listed parent
+# This defines three sub-dags, all of which have no listed dependency
 # (meaning their roots have no prereqs, so they can go in any order).
 [assets.test.files]
 content:----------

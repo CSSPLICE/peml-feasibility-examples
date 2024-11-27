@@ -22,41 +22,41 @@ blockid: testAblock
 [.blocklist]
 blockid: caseA
 display: if (testA) {
-parent:
+depends:
 
 blockid: stuffA
 display:----------
   doAstuff();
 }
 ----------
-parent: caseA
+depends: caseA
 []
 
 blockid: testBblock
 [.blocklist]
 blockid: caseB
 display: if (testB) {
-parent:
+depends:
 
 blockid: stuffB
 display:----------
   doBstuff();
 }
 ----------
-parent: caseB
+depends: caseB
 []
 
 blockid: testCblock
 [.blocklist]
 blockid: caseC
 display: if (testC) {
-parent:
+depends:
 
 blockid: stuffC
 display:----------
   doCstuff();
 }
 ----------
-parent: caseC
+depends: caseC
 []
 []

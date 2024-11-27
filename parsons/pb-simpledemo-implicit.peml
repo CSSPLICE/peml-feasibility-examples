@@ -27,18 +27,18 @@ Prove that (A AND B AND C) implies (A AND C).
 
 blockid: one
 display: Assume A AND B AND C.
-parent:
+depends:
 
 blockid: two
 display: Then A is TRUE.
-parent: one
+depends: one
 
 blockid: three
 display: Then C is TRUE.
-parent: one
+depends: one
 
 blockid: four
 display: Since A and C are TRUE, we know (A AND C) is TRUE.
-parent: two, three
+depends: two, three
 []
 []

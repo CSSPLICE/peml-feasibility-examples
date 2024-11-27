@@ -54,7 +54,7 @@ display: }
 []
 []
 
-# The parent dependency for blocks "onea" and "four" are -1, meaning
+# The dependency for blocks "onea" and "four" are -1, meaning
 # that they are distractors and should not appear in the solution.
 [assets.test.files]
 content:----------
