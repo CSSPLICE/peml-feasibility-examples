@@ -1,5 +1,7 @@
 # NP-completeness proof: Independent Set is NP-Complete
-# Simplified version of pb-Clique2IS that only requires standard DAG grading
+# Simplified version of pb-Clique2IS that only requires standard DAG
+# grading, and also removes the toggles.
+
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-Clique2IS-DAG.peml
 
@@ -32,24 +34,38 @@ display: Nondeterministically guess some collection of vertices. If the vertices
 depends: -1
 
 blockid: NPhard
-display: 2. Show that INDEPENDENT SET is NP-hard.
+display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
+of known NP-complete problem CLIQUE to IS.
 depends: algorithm
 
+blockid: d3
+display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
+of IS to known NP-complete problem CLIQUE.
+depends: -1
+
 blockid: starthard
-display: Show transformations to reduce ``CLIQUE`IS`` to ``IS`CLIQUE``.
+display: Show transformations to reduce CLIQUE to IS.
 depends: NPhard
 
+blockid: d2
+display: Show transformations to reduce IS to CLIQUE.
+depends: -1
+
 blockid: reduce
-display: To reduce a [CLIQUE|IS] input instance to an [INDEPENDENT SET|CLIQUE] input instance for a given graph $G = (V , E)$, construct a complementary graph $G' = (V' , E’)$ such that:
+display: To reduce a CLIQUE input instance to an IS input instance for a given graph $G = (V , E)$, construct a complementary graph $G' = (V' , E’)$ such that:
 depends: starthard
 
+blockid: d4
+display: To reduce an IS input instance to a CLIQUE input instance for a given graph $G = (V , E)$, construct a complementary graph $G' = (V' , E’)$ such that:
+depends: -1
+
 blockid: step1
-display: 1. $V = V'$ , that is the complement graph will have the same vertices as the original graph.
+display: a. $V = V'$. That is, the complement graph will have the same vertices as the original graph.
 depends: reduce
 
 blockid: step2
-display: 2. $E'$ is the complement of $E$ that is $G'$ has all the edges that is <b>not</b> present in $G$.
-depends: step 1
+display: b. $E'$ is the complement of $E$ that is $G'$ has all the edges that is <b>not</b> present in $G$.
+depends: step1
 
 blockid: polynomial
 display: Construction of the complementary graph can be done in polynomial time.
@@ -64,8 +80,7 @@ display: <b>If there is an independent set of size $k$ in the complement graph $
 depends: iff
 
 blockid: onlyif
-display: 
-<b>If there is a clique of size $k$ in the graph $G$</b>, it implies all vertices share an edge with all others in $G$, which further implies no two of these vertices share an edge in $G'$ (thus forming an Independent Set. That is, <b>there exists an independent set of size $k$ in $G'$</b>.
+display: <b>If there is a clique of size $k$ in the graph $G$</b>, it implies all vertices share an edge with all others in $G$, which further implies no two of these vertices share an edge in $G'$ (thus forming an Independent Set. That is, <b>there exists an independent set of size $k$ in $G'$</b>.
 depends: iff
 []
 []

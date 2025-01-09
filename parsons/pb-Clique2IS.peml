@@ -37,24 +37,30 @@ depends: -1
 blockid: NPhardblock
 [.blocklist]
 blockid:NPhard
-display: 2. Show that INDEPENDENT SET is NP-hard.
+display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
+of known NP-comlete problem CLIQUE to IS.
 depends:
+
+blockid: d3
+display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
+of IS to known NP-complete problem CLIQUE.
+depends: -1
 
 blockid: starthard
 display: Show transformations to reduce ``CLIQUE`IS`` to ``IS`CLIQUE``.
 depends: NPhard
 
 blockid: reduce
-display: To reduce a [CLIQUE|IS] input instance to an [INDEPENDENT SET|CLIQUE] input instance for a given graph $G = (V , E)$, construct a complementary graph $G' = (V' , E’)$ such that:
+display: To reduce a [CLIQUE|IS] input instance to an [IS|CLIQUE] input instance for a given graph $G = (V , E)$, construct a complementary graph $G' = (V' , E’)$ such that:
 depends: starthard
 
 blockid: step1
-display: 1. $V = V'$ , that is the complement graph will have the same vertices as the original graph.
+display: a. $V = V'$. That is, the complement graph will have the same vertices as the original graph.
 depends: reduce
 
 blockid: step2
-display: 2. $E'$ is the complement of $E$ that is $G'$ has all the edges that is <b>not</b> present in $G$.
-depends: step 1
+display: b. $E'$ is the complement of $E$ that is $G'$ has all the edges that is <b>not</b> present in $G$.
+depends: step1
 
 blockid: polynomial
 display: Construction of the complementary graph can be done in polynomial time.
