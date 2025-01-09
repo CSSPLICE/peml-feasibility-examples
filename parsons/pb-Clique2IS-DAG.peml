@@ -1,9 +1,9 @@
 # NP-completeness proof: Independent Set is NP-Complete
-# Requires support for nested DAG grading
+# Simplified version of pb-Clique2IS that only requires standard DAG grading
 
-exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-Clique2IS.peml
+exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-Clique2IS-DAG.peml
 
-title: Clique to Independent Set
+title: Clique to Independent Set (Simplified)
 author: Cliff Shaffer
 license.id: MIT
 license.owner.name: Cliff Shaffer
@@ -19,10 +19,8 @@ Show a proof that the decision form of Independent Set is NP-complete.
 [assets.code.starter.files]
 [.content]
 
-blockid: inNPblock
-[.blocklist]
 blockid: inNP
-display: Show that INDEPENDENT SET is in NP.
+display: 1. Show that INDEPENDENT SET is in NP.
 depends:
 
 blockid: algorithm
@@ -32,13 +30,10 @@ depends: inNP
 blockid: d1
 display: Nondeterministically guess some collection of vertices. If the vertices are independent, and if it is the biggest such set, then return YES. Otherwise return NO.
 depends: -1
-[]
 
-blockid: NPhardblock
-[.blocklist]
-blockid:NPhard
+blockid: NPhard
 display: 2. Show that INDEPENDENT SET is NP-hard.
-depends:
+depends: algorithm
 
 blockid: starthard
 display: Show transformations to reduce ``CLIQUE`IS`` to ``IS`CLIQUE``.
@@ -72,6 +67,5 @@ blockid: onlyif
 display: 
 <b>If there is a clique of size $k$ in the graph $G$</b>, it implies all vertices share an edge with all others in $G$, which further implies no two of these vertices share an edge in $G'$ (thus forming an Independent Set. That is, <b>there exists an independent set of size $k$ in $G'$</b>.
 depends: iff
-[]
 []
 []
