@@ -1,4 +1,6 @@
-# NP-completeness proof template
+# NP-completeness proof template.
+# This version is simplified so that it works with standard DAG
+# grading.
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-nptemplate.peml
 
@@ -22,22 +24,17 @@ blockid: starter
 display: To prove that a problem X is NP-complete do this:
 depends:
 
-blockid: inNP
-[.blocklist]
 blockid: xinNP
-display: Show that X is in NP.
+display: 1. Show that X is in NP.
 depends: starter
 
 blockid: algorithm
 display: Create an algorithm to solve X (that might or might not use non-determinism) that runs in polynomial time.
 depends: inNP
-[]
 
-blockid: NPhard
-[.blocklist]
 blockid: starthard
-display: Show that X is NP-hard.
-depends: starter
+display: 2. Show that X is NP-hard.
+depends: algorithm
 
 blockid: choose
 display: Choose a known NP-hard problem A.
@@ -48,12 +45,20 @@ display: Define two transformations.
 depends: choose
 
 blockid: t1
-display: Describe a polynomial-time algorithm that takes an arbitrary instance <b>I</b> of ``A`X`` to an instance <b>I′</b> of ``X`A``.
+display: Describe a polynomial-time algorithm that takes an arbitrary instance <b>I</b> of A to an instance <b>I′</b> of X.
 depends: trans
 
+blockid: d1
+display: Describe a polynomial-time algorithm that takes an arbitrary instance <b>I</b> of X to an instance <b>I′</b> of A.
+depends: -1
+
 blockid: t2
-display: Describe a polynomial-time transformation from the solution for <b>I’</b> in problem ``X`A`` (call it <b>SLN’</b>) to <b>SLN</b> such that <b>SLN</b> is the solution for <b>I</b> in problem ``A`X``.
+display: Describe a polynomial-time transformation from the solution for <b>I’</b> in problem X (call it <b>SLN’</b>) to <b>SLN</b> such that <b>SLN</b> is the solution for <b>I</b> in problem A.
 depends: trans
-[]
+
+blockid: d2
+display: Describe a polynomial-time transformation from the solution for <b>I’</b> in problem A (call it <b>SLN’</b>) to <b>SLN</b> such that <b>SLN</b> is the solution for <b>I</b> in problem X.
+depends: -1
+
 []
 []
