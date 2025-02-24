@@ -5,7 +5,7 @@
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/swap1-execute-CW.peml
 
-title: Swap1_execute
+title: Swap1_execute_PEML
 
 license.id: MIT
 license.owner.name: Cliff Shaffer
@@ -44,9 +44,7 @@ public int[] Swap(int[] arr, int i, int j)
 [assets.test.files]
 format: text/csv-unquoted
 template:
-  int[] values = {{arr}};
-  subject.Swap(values, {{i}}, {{j}});
-  AssertEquals({{expected}}, values);
+pattern_actual: subject.Swap({{arr,i,j}})
 content:----------
 arr,i,j,expected,description
 "new int[]{1, 2, 3, 4}, 2, 3","new int[]{1,2,4,3}",example
