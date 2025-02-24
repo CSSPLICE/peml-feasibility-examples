@@ -1,6 +1,5 @@
 exercise_id: [Raw text string]
 title: [Your title here]
-external_id: [Your ID here]
 
 # License block: You need either this, or else an author: tag.
 license.id: [A string from the license keywords used by github]
@@ -44,7 +43,7 @@ depends: One or more <BLOCKID> or -1 (for blocks not in solution) or leave blank
 
 [assets.test.files] [REQUIRED FOR EXECUTE TYPE]
 format: text/csv-unquoted
-pattern_actual: [IS THIS NEEDED?]
+pattern.actual: [IS THIS NEEDED?]
 content:----------
 expected,description
 [PUT TESTS HERE]
