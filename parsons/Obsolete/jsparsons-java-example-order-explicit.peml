@@ -2,7 +2,6 @@
 # blocks. Correct indentation is required.
 # Technically this is a Java exercise, but this is a moot point
 # because the assessment is by block order.
-# The order requirements are defaulted to the block ordering.
 # Derived from jsParsons
 # https://github.com/js-parsons/js-parsons/blob/master/examples/java-example.html
 
@@ -43,4 +42,14 @@ blockid: five
 display: }
 indent: 0
 []
+[]
+
+[assets.test.files]
+content:----------
+one:
+two: one
+three: two
+four: three
+five: four
+----------
 []

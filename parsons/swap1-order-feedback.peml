@@ -33,6 +33,7 @@ public static void Swap(int[] arr, int i, int j)
 ----------
 
 blockid: group1
+depends:
 [.pickone]
 blockid: one
 display: int temp = arr[i];
@@ -44,27 +45,18 @@ feedback: This was the wrong choice.
 
 blockid: two
 display: arr[i] = arr[j];
+depends: group1
 
 blockid: three
 display: arr[j] = temp;
+depends: two
 
 blockid: four
 display: int temp = arr[j];
 feedback: This line should not appear in the answer.
+depends: -1
 
 blockid: fixed
 display: }
 []
-[]
-
-# The dependency for blocks "onea" and "four" are -1, meaning
-# that they are distractors and should not appear in the solution.
-[assets.test.files]
-content:----------
-one:
-onea: -1
-two: one
-three: two
-four: -1
-----------
 []

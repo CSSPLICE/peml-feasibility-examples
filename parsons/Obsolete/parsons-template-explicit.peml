@@ -49,3 +49,9 @@ expected,description
 [PUT TESTS HERE]
 ----------
 []
+
+[assets.test.files] [REQUIRED FOR DAG TYPE]
+content:----------
+[PUT DAG HERE]
+----------
+[]

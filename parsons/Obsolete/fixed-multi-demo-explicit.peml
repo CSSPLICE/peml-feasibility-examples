@@ -15,13 +15,6 @@ instructions:----------
 Put the blocks in the proper order.
 ----------
 
-# Note that the DAG implied by the depends tags
-# only indicates the relative positioning of the
-# adjustable blocks. It is the responsibility of the system
-# implementation to deal with things like how the fixed blocks are
-# displayed with respect to the orderable blocks, and limiting where
-# the user can place an orderable block so that things appear in a
-# reasonable order.
 [assets.code.starter.files]
 [.content]
 blockid: fixed
@@ -36,18 +29,15 @@ display:----------
 Random Group 1 Block 1
   This block is the first block after the "Fixed Start" block.
 ----------
-depends:
 
 blockid: randomg1b2
 display:----------
 Random Group 1 Block 2
   This block is the second block after the "Fixed Start" block.
 ----------
-depends: randomg1b1
 
 blockid: randomg1b3
 display: Random Group 1 Block 3: the third block in the first group
-depends: randomg1b2
 
 blockid: fixed
 display: Fixed Middle: Appears in the middle of the exercise
@@ -57,7 +47,6 @@ display:----------
 Random Group 2 Block 1
   This block is the first block after the "Fixed Middle" block.
 ----------
-depends: randomg1b3
 
 blockid: randomg2b2
 display:----------
@@ -65,14 +54,12 @@ Random Group 2 Block 2
   This block is the second block
 that comes after the "Fixed Start" block.
 ----------
-depends: randomg2b1
 
 blockid: randomg1b3
 display:----------
 Random Group 2 Block 3
 This is the final adjustable block.
 ----------
-depends: randomg2b2
 
 blockid: fixed
 display:----------
@@ -81,3 +68,20 @@ Fixed End
 ----------
 []
 []
+
+# Note that the DAG only indicates the relative positioning of the
+# adjustable blocks. It is the responsibility of the system
+# implementation to deal with things like how the fixed blocks are
+# displayed with respect to the orderable blocks, and limiting where
+# the user can place an orderable block so that things appear in a
+# reasonable order.
+[assets.test.files]
+content:----------
+randomg1b1:
+randomg1b2: randomg1b1
+randomg1b3: randomg1b2
+randomg2b1: randomg1b3
+randomg2b2: randomg2b1
+randomg2b3: randomg2b2
+
+----------

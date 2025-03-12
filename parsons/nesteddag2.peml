@@ -1,5 +1,4 @@
 # Demonstration of order grading that requires DAG nesting.
-# This version uses an implicit DAG.
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/nesteddag2.peml
 
@@ -19,6 +18,7 @@ tests in any order.
 [assets.code.starter.files]
 [.content]
 blockid: testAblock
+depends:
 [.blocklist]
 blockid: caseA
 display: if (testA) {
@@ -33,6 +33,7 @@ depends: caseA
 []
 
 blockid: testBblock
+depends:
 [.blocklist]
 blockid: caseB
 display: if (testB) {
@@ -47,6 +48,7 @@ depends: caseB
 []
 
 blockid: testCblock
+depends:
 [.blocklist]
 blockid: caseC
 display: if (testC) {
