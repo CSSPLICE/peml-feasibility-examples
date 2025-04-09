@@ -28,7 +28,7 @@ content:----------
 ----------
 []
 
-[assets.code.starter.files] [ALWAYS REQUIRED]
+[assets.code.blocks] [ALWAYS REQUIRED]
 [.content]
 {BLOCKS GO HERE: This should consist of one or more BLOCKID objects}
 

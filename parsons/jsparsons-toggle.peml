@@ -29,7 +29,7 @@ b = 2
 ----------
 []
 
-[assets.code.starter.files]
+[assets.code.blocks]
 [.content]
 blockid: one1
 display: if ``a`b`c`` ``<`>`>=`` b

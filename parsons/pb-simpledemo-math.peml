@@ -20,7 +20,7 @@ instructions:----------
 Prove that $A \land B \land C) \rightarrow A \land C$.
 ----------
 
-[assets.code.starter.files]
+[assets.code.blocks]
 [.content]
 
 blockid: one

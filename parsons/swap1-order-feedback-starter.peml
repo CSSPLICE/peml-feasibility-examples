@@ -9,6 +9,7 @@
 # systems will give visual signaling that these are grouped).
 # The other is a block that cannot appear in the answer.
 # Illustrates feedback for the distractors.
+# Uses starter code instead of fixed start/end blocks
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/swap1-order-feedback.peml
 
@@ -24,14 +25,17 @@ instructions:----------
 Write a function to swap two array elements by reordering the lines.
 ----------
 
-[assets.code.blocks]
-[.content]
-blockid: fixed
-display:----------
+[assets.code.starter.files]
+content:----------
 public static void Swap(int[] arr, int i, int j)
 {
+    ___
+}
 ----------
 
+
+[assets.code.blocks]
+[.content]
 blockid: group1
 depends:
 [.pickone]
@@ -55,8 +59,5 @@ blockid: four
 display: int temp = arr[j];
 feedback: This line should not appear in the answer.
 depends: -1
-
-blockid: fixed
-display: }
 []
 []

@@ -22,7 +22,7 @@ instructions:----------
 Prove that (A AND B AND C) implies (A AND C).
 ----------
 
-[assets.code.starter.files]
+[assets.code.blocks]
 [.content]
 
 blockid: one

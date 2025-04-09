@@ -27,7 +27,7 @@ content:----------
 ----------
 []
 
-[assets.code.starter.files]
+[assets.code.blocks]
 [.content]
 blockid: one
 display: def maxindex(arg):
