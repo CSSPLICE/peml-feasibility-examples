@@ -28,8 +28,7 @@ content:----------
 ----------
 []
 
-[assets.code.blocks] [ALWAYS REQUIRED]
-[.content]
+[assets.code.blocks.content] [ALWAYS REQUIRED]
 {BLOCKS GO HERE: This should consist of one or more BLOCKID objects}
 
 blockid: <name>
@@ -38,7 +37,6 @@ code: <Executed code> [OPTIONAL: If provided in an EXECUTE type, then
                        this gets executed instead of what is in "display:"]
 indent: 1 [OPTIONAL: indent level. If any tags have indent, then all must.]
 depends: One or more <BLOCKID> or -1 (for blocks not in solution) or leave blank (for blocks with no prereq)
-[]
 []
 
 [assets.test.files] [REQUIRED FOR EXECUTE TYPE]

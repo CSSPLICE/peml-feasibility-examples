@@ -14,7 +14,8 @@ exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/par
 title: Swap1 - order
 author: Cliff Shaffer
 license.id: MIT
-license.owner: Cliff Shaffer
+license.owner.name: Cliff Shaffer
+license.owner.email: shaffer@vt.edu
 
 tags.topics: PEML Demo Parsons Problem
 tags.style: parsons, order
@@ -23,8 +24,7 @@ instructions:----------
 Write a function to swap two array elements by reordering the lines.
 ----------
 
-[assets.code.blocks]
-[.content]
+[assets.code.blocks.content]
 blockid: fixed
 display:----------
 public static void Swap(int[] arr, int i, int j)
@@ -33,7 +33,8 @@ public static void Swap(int[] arr, int i, int j)
 
 blockid: group1
 depends:
-[.pickone]
+pickone: true
+[.blocklist]
 blockid: one
 display: int temp = arr[i];
 
@@ -55,5 +56,4 @@ depends: -1
 
 blockid: fixed
 display: }
-[]
 []

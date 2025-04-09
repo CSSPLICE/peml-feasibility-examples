@@ -38,8 +38,7 @@ public class Answer
 ----------
 []
 
-[assets.code.blocks]
-[.content]
+[assets.code.blocks.content]
 tag: fixed
 display:----------
 public int[] Swap(int[] arr, int i, int j)
@@ -71,7 +70,6 @@ display:----------
     return arr;
 }
 ----------
-[]
 []
 
 [assets.test.files]

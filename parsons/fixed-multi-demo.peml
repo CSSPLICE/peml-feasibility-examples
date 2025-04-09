@@ -6,7 +6,8 @@ exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/par
 title: Fixed Block Demo #2: Multi-lines
 author: Cliff Shaffer
 license.id: MIT
-license.owner: Cliff Shaffer
+license.owner.name: Cliff Shaffer
+license.owner.email: shaffer@vt.edu
 
 tags.topics: PEML Demo Parsons Problem
 tags.style: parsons, order
@@ -22,8 +23,7 @@ Put the blocks in the proper order.
 # displayed with respect to the orderable blocks, and limiting where
 # the user can place an orderable block so that things appear in a
 # reasonable order.
-[assets.code.blocks]
-[.content]
+[assets.code.blocks.content]
 blockid: fixed
 display:----------
 Fixed Start
@@ -79,5 +79,4 @@ display:----------
 Fixed End
       This block appears at the end.
 ----------
-[]
 []

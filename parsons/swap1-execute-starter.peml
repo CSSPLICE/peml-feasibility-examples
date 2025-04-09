@@ -49,8 +49,7 @@ public int[] Swap(int[] arr, int i, int j)
 ----------
 
 
-[assets.code.blocks]
-[.content]
+[assets.code.blocks.content]
 blockid: one
 display: int temp = arr[i];
 
@@ -70,7 +69,6 @@ display: arr[j] = temp;
 # This is a distractor
 blockid: four
 display: int temp = arr[j];
-[]
 []
 
 [assets.test.files]
