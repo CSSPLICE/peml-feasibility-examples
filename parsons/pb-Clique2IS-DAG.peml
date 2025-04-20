@@ -34,12 +34,14 @@ depends: -1
 
 blockid: NPhard
 display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
-of known NP-complete problem CLIQUE to IS.
+of a known NP-comlete problem to IS. For this exercise, we assume that
+CLIQUE is known to be NP-complete.
 depends: algorithm
 
 blockid: d3
 display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
-of IS to known NP-complete problem CLIQUE.
+of IS to known NP-complete problem. For this exercise, we assume that
+CLIQUE is known to be NP-complete.
 depends: -1
 
 blockid: starthard
