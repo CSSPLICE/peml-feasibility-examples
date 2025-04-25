@@ -34,18 +34,18 @@ language: Python
 
 [assets.code.wrapper.files]
 content:----------
-    ___
+___
 ----------
 
 [assets.code.starter.files]
 content:----------
-    ___
+___
 ----------
 
 [assets.test.files]
 format: text/csv-unquoted
 content:----------
 expected,description
-Hello\nParsons\nProblems!,example
+"""Hello\nParsons\nProblems!""",example
 ----------
 []
