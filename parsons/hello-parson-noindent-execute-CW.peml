@@ -45,7 +45,7 @@ ___
 [assets.test.files]
 format: text/csv-unquoted
 content:----------
-expected,description
-"""Hello\nParsons\nProblems!""",example
+input,expected,description
+,"""Hello\nParsons\nProblems!""",example
 ----------
 []
