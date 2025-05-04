@@ -1,4 +1,7 @@
 # Demonstration of order grading that requires DAG nesting.
+# There are three "if" tests that can go in any order. But the
+# contents of the associated block has to appear immediately after its
+# test.
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/nesteddag2.peml
 
@@ -16,6 +19,7 @@ tests in any order.
 ----------
 
 [assets.code.blocks.content]
+
 blockid: testAblock
 depends:
 [.blocklist]
