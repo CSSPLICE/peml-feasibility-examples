@@ -46,7 +46,7 @@ display: print(b)
 [assets.test.files]
 format: text/csv-unquoted
 content:----------
-expected,description
+expected
 2
 ----------
 []
