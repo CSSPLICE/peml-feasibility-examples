@@ -46,11 +46,11 @@ display: Define two transformations.
 depends: choose
 
 blockid: t1
-display: Describe a polynomial-time algorithm that takes an arbitrary instance <b>I</b> of ``A`X`` to an instance <b>I′</b> of ``X`A``.
+display: Describe a polynomial-time algorithm that takes an arbitrary instance **I** of ``A`X`` to an instance **I'** of ``X`A``.
 depends: trans
 
 blockid: t2
-display: Describe a polynomial-time transformation from the solution for <b>I’</b> in problem ``X`A`` (call it <b>SLN’</b>) to <b>SLN</b> such that <b>SLN</b> is the solution for <b>I</b> in problem ``A`X``.
+display: Describe a polynomial-time transformation from the solution for **I’** in problem ``X`A`` (call it **SLN’**) to **SLN** such that **SLN** is the solution for **I** in problem ``A`X``.
 depends: trans
 []
 []

@@ -25,11 +25,11 @@ Show a proof that the decision form of Independent Set is NP-complete.
 [assets.code.blocks.content]
 
 blockid: inNP
-display: 1. Show that INDEPENDENT SET is in NP.
+display: 1) Show that INDEPENDENT SET is in NP.
 depends:
 
 blockid: algorithm
-display: Nondeterministically guess some subset of the vertices. If this set is at least of size k (k is the parameter to the decision problem), and the vertices are all independent, then return YES. Otherwise return NO.
+display: Nondeterministically guess some subset of the vertices. If this set is at least of size $k$ [$k$ is the parameter to the decision problem], and the vertices are all independent, then return YES. Otherwise return NO.
 depends: inNP
 
 blockid: d1
@@ -37,15 +37,11 @@ display: Nondeterministically guess some collection of vertices. If the vertices
 depends: -1
 
 blockid: NPhard
-display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
-of a known NP-comlete problem to IS. For this exercise, we assume that
-CLIQUE is known to be NP-complete.
+display: 2) Show that INDEPENDENT SET is NP-hard by using a reduction of a known NP-comlete problem to IS. For this exercise, we assume that CLIQUE is known to be NP-complete.
 depends: algorithm
 
 blockid: d3
-display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
-of IS to known NP-complete problem. For this exercise, we assume that
-CLIQUE is known to be NP-complete.
+display: 2) Show that INDEPENDENT SET is NP-hard by using a reduction of IS to a known NP-complete problem. For this exercise, we assume that CLIQUE is known to be NP-complete.
 depends: -1
 
 blockid: starthard
@@ -65,11 +61,11 @@ display: To reduce an IS input instance to a CLIQUE input instance for a given g
 depends: -1
 
 blockid: step1
-display: a. $V = V'$. That is, the complement graph will have the same vertices as the original graph.
+display: a) $V = V'$. That is, the complement graph will have the same vertices as the original graph.
 depends: reduce
 
 blockid: step2
-display: b. $E'$ is the complement of $E$ that is $G'$ has all the edges that is <b>not</b> present in $G$.
+display: b) $E'$ is the complement of $E$ that is $G'$ has all the edges that is **not** present in $G$.
 depends: step1
 
 blockid: polynomial
@@ -81,10 +77,10 @@ display: We need to show that with this reduction, there is an independent set o
 depends: step2
 
 blockid: if
-display: <b>If there is an independent set of size $k$ in the complement graph $G'$</b>, it implies no two vertices share an edge in $G'$, which further implies all of those vertices share an edge with all others in $G$ forming a clique. That is, <b>there exists a clique of size $k$ in $G$</b>.
+display: **If there is an independent set of size $k$ in the complement graph $G'$**, it implies no two vertices share an edge in $G'$, which further implies all of those vertices share an edge with all others in $G$ forming a clique. That is, **there exists a clique of size $k$ in $G$**.
 depends: iff
 
 blockid: onlyif
-display: <b>If there is a clique of size $k$ in the graph $G$</b>, it implies all vertices share an edge with all others in $G$, which further implies no two of these vertices share an edge in $G'$ (thus forming an Independent Set. That is, <b>there exists an independent set of size $k$ in $G'$</b>.
+display: **If there is a clique of size $k$ in the graph $G$**, it implies all vertices share an edge with all others in $G$, which further implies no two of these vertices share an edge in $G'$ [thus forming an Independent Set]. That is, **there exists an independent set of size $k$ in $G'$**.
 depends: iff
 []

@@ -23,7 +23,7 @@ display: To prove that a problem X is NP-complete do this:
 depends:
 
 blockid: xinNP
-display: 1. Show that X is in NP.
+display: 1) Show that X is in NP.
 depends: starter
 
 blockid: algorithm
@@ -31,7 +31,7 @@ display: Create an algorithm to solve X (that might or might not use non-determi
 depends: xinNP
 
 blockid: starthard
-display: 2. Show that X is NP-hard.
+display: 2) Show that X is NP-hard.
 depends: algorithm
 
 blockid: choose
@@ -43,18 +43,18 @@ display: Define two transformations.
 depends: choose
 
 blockid: t1
-display: Describe a polynomial-time algorithm that takes an arbitrary instance <b>I</b> of A to an instance <b>I′</b> of X.
+display: Describe a polynomial-time algorithm that takes an arbitrary instance **I** of A to an instance **I′** of X.
 depends: trans
 
 blockid: d1
-display: Describe a polynomial-time algorithm that takes an arbitrary instance <b>I</b> of X to an instance <b>I′</b> of A.
+display: Describe a polynomial-time algorithm that takes an arbitrary instance **I** of X to an instance **I′** of A.
 depends: -1
 
 blockid: t2
-display: Describe a polynomial-time transformation from the solution for <b>I’</b> in problem X (call it <b>SLN’</b>) to <b>SLN</b> such that <b>SLN</b> is the solution for <b>I</b> in problem A.
+display: Describe a polynomial-time transformation from the solution for **I’** in problem X (call it **SLN’**) to **SLN** such that **SLN** is the solution for **I** in problem A.
 depends: trans
 
 blockid: d2
-display: Describe a polynomial-time transformation from the solution for <b>I’</b> in problem A (call it <b>SLN’</b>) to <b>SLN</b> such that <b>SLN</b> is the solution for <b>I</b> in problem X.
+display: Describe a polynomial-time transformation from the solution for <b>I’</b> in problem A (call it **SLN’**) to **SLN** such that **SLN** is the solution for **I** in problem X.
 depends: -1
 []

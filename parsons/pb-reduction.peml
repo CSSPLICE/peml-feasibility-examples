@@ -11,6 +11,10 @@ license.owner.email: shaffer@vt.edu
 tags.topics: PEML reduction
 tags.style: parsons, order
 
+[systems]
+language: math
+[]
+
 instructions:----------
 Show the general process for reducing one problem to another.
 ----------
@@ -21,7 +25,7 @@ display: Consider any two problems for which a suitable reduction from one to th
 depends:
 
 blockid: first
-display: The first problem takes an arbitrary instance of its input, which we will call <b>I</b>, and transforms <b>I</b> to a solution, which we will call <b>SLN</b>.
+display: The first problem takes an arbitrary instance of its input, which we will call **I**, and transforms <b>I</b> to a solution, which we will call <b>SLN</b>.
 depends: start
 
 blockid: second

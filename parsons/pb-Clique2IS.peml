@@ -40,13 +40,13 @@ depends: -1
 blockid: NPhardblock
 [.blocklist]
 blockid:NPhard
-display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
+display: 2) Show that INDEPENDENT SET is NP-hard by using a reduction
 of a known NP-comlete problem to IS. For this exercise, we assume that
 CLIQUE is known to be NP-complete.
 depends:
 
 blockid: d3
-display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
+display: 2) Show that INDEPENDENT SET is NP-hard by using a reduction
 of IS to known NP-complete problem. For this exercise, we assume that
 CLIQUE is known to be NP-complete.
 depends: -1
@@ -60,11 +60,11 @@ display: To reduce a [CLIQUE|IS] input instance to an [IS|CLIQUE] input instance
 depends: starthard
 
 blockid: step1
-display: a. $V = V'$. That is, the complement graph will have the same vertices as the original graph.
+display: a) $V = V'$. That is, the complement graph will have the same vertices as the original graph.
 depends: reduce
 
 blockid: step2
-display: b. $E'$ is the complement of $E$ that is $G'$ has all the edges that is <b>not</b> present in $G$.
+display: b) $E'$ is the complement of $E$ that is $G'$ has all the edges that is **not** present in $G$.
 depends: step1
 
 blockid: polynomial
@@ -76,12 +76,12 @@ display: We need to show that with this reduction, there is an independent set o
 depends: step2
 
 blockid: if
-display: <b>If there is an independent set of size $k$ in the complement graph $G'$</b>, it implies no two vertices share an edge in $G'$, which further implies all of those vertices share an edge with all others in $G$ forming a clique. That is, <b>there exists a clique of size $k$ in $G$</b>.
+display: **If there is an independent set of size $k$ in the complement graph $G'$**, it implies no two vertices share an edge in $G'$, which further implies all of those vertices share an edge with all others in $G$ forming a clique. That is, **there exists a clique of size $k$ in $G$**.
 depends: iff
 
 blockid: onlyif
 display: 
-<b>If there is a clique of size $k$ in the graph $G$</b>, it implies all vertices share an edge with all others in $G$, which further implies no two of these vertices share an edge in $G'$ (thus forming an Independent Set. That is, <b>there exists an independent set of size $k$ in $G'$</b>.
+**If there is a clique of size $k$ in the graph $G$**, it implies all vertices share an edge with all others in $G$, which further implies no two of these vertices share an edge in $G'$ (thus forming an Independent Set. That is, **there exists an independent set of size $k$ in $G'$**.
 depends: iff
 []
 []
