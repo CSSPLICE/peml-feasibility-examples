@@ -14,10 +14,6 @@ license.id: MIT
 license.owner.name: Cliff Shaffer
 license.owner.email: shaffer@vt.edu
 
-[systems]
-language: math
-[]
-
 tags.topics: PEML Demo Parsons Problem
 tags.style: parsons, order
 

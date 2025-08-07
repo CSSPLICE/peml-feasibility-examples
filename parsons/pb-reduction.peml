@@ -11,10 +11,6 @@ license.owner.email: shaffer@vt.edu
 tags.topics: PEML reduction
 tags.style: parsons, order
 
-[systems]
-language: math
-[]
-
 instructions:----------
 Show the general process for reducing one problem to another.
 ----------

@@ -9,10 +9,6 @@ license.id: MIT
 license.owner.name: Cliff Shaffer
 license.owner.email: shaffer@vt.edu
 
-[systems]
-language: math
-[]
-
 tags.topics: PEML NP-completeness
 tags.style: parsons, order
 
