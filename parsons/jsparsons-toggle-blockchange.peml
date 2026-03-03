@@ -34,7 +34,7 @@ ___
 [assets.code.blocks.content]
 blockid: one1
 delimiter: \
-display: if \\a\b\c\\ \\<\>\>=\ b
+display: if \\a\b\c\\ \\<\>\>=\\ b
 
 blockid: two
 display: print(a)
