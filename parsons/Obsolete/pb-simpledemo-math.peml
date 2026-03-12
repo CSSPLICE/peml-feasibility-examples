@@ -20,7 +20,8 @@ instructions:----------
 Prove that $A \land B \land C) \rightarrow A \land C$.
 ----------
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
+[]
 [.content]
 
 blockid: one
@@ -34,10 +35,8 @@ display: Then $C$ is true.
 
 blockid: four
 display: Since $A$ and $C$, we know $A \land C$.
-[]
-[]
 
-[assets.test.files]
+[.assets.test.files]
 content:----------
 one:
 two: one

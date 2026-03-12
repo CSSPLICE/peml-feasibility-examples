@@ -19,9 +19,8 @@ You MUST reuse the closing block twice to complete the program.
 
 [systems]
 language: Java
-[]
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 public class Parsons {
     public static void main(String[] args) {
@@ -31,7 +30,7 @@ public class Parsons {
 ----------
 []
 
-[assets.code.blocks.content]
+[.assets.code.blocks.content]
 blockid: one
 display: for (int i = 0; i < 10; i++) {
 indent: 0
@@ -51,8 +50,8 @@ reusable: true
 indent: 0
 []
  
-[assets.test.files]
-format: text/csv-unquoted
+[.assets.test.files]
+type: text/x-unquoted-csv
 content:----------
 expected
 02468

@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/607/practice?workout_id=759
+exercise_id: ITSC1213_constructor_2
 
 title: Implement a Constructor
-external_id: ITSC1213_constructor_2
-is_public: false
-experience: 10
-language_list: Java
+vendor.codeworkout.is_public: false
+difficulty: 10
 
 license.id: cc-sa-4.0
 license.owner.email: smcleo12@uncc.edu
@@ -20,12 +18,13 @@ Given the following constructor, set the fields to the corresponding parameters.
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 ___ 
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 public class Course
 {
@@ -40,10 +39,11 @@ public class Course
    }
 }
 ----------
+[]
 
 
-[assets.test.files]
-format: java/junit
+[.assets.test.files]
+type: text/x-java
 content:----------
 import static org.junit.Assert.*;
 import org.junit.*;
@@ -69,4 +69,5 @@ public class CourseTest extends CodeWorkoutTest
    }
 }
 ----------
+[]
 

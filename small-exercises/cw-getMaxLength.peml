@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/593/practice?workout_id=759
+exercise_id: ITSC1213_get_maxlength
 
 title: getMaxLength
-external_id: ITSC1213_get_maxlength
-is_public: true
-experience: 10
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 10
 
 license.id: cc-sa-4.0
 license.owner.email: lcao2@uncc.edu
@@ -23,7 +21,7 @@ should return 0. For example, if an ArrayList variable called list stores
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 import java.util.ArrayList;
 public class ArrayListProblem
@@ -31,25 +29,28 @@ public class ArrayListProblem
    ___
 }
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 public int getMaxLength(ArrayList list)
 {
    ___
 }
 ----------
+[]
 
 
-[assets.test.files]
-format: text/csv-unquoted
-pattern.actual: subject.getMaxLength({{list}})
+[.assets.test.files]
+type: text/x-unquoted-csv
+pattern.method_call: getMaxLength({{list}})
 content:----------
-list,expected,description
-"new java.util.ArrayList(){{add(""four"");add(""and"");add(""years"");add(""ago"");}}",5,example
-"new java.util.ArrayList()",0
-"new java.util.ArrayList(){{add(""once"");add(""upon"");add(""a"");add(""time"");}}",4
-"new java.util.ArrayList(){{add(""greetings"");add(""hello"");add(""welcome"");add(""byebye"");}}",8,hidden
+list, expected, description
+new java.util.ArrayList(){{add("four");add("and");add("years");add("ago");}}, 5, example
+new java.util.ArrayList(), 0
+new java.util.ArrayList(){{add("once");add("upon");add("a");add("time");}}, 4
+new java.util.ArrayList(){{add("greetings");add("hello");add("welcome");add("byebye");}}, 8, hidden
 "new java.util.ArrayList(){{add(""
 ----------
+[]
 

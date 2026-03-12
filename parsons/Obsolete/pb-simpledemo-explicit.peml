@@ -23,7 +23,8 @@ instructions:----------
 Prove that (A AND B AND C) implies (A AND C).
 ----------
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
+[]
 [.content]
 
 blockid: one
@@ -37,10 +38,8 @@ display: Then C is TRUE.
 
 blockid: four
 display: Since A and C are TRUE, we know (A AND C) is TRUE.
-[]
-[]
 
-[assets.test.files]
+[.assets.test.files]
 content:----------
 one:
 two: one

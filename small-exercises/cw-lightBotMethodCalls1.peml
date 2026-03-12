@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/821/practice?workout_id=1307
+exercise_id: CS1114_Week1SyntaxDrill1
 
 title: CodeWorkout LightBot Method Calls 1
-external_id: CS1114_Week1SyntaxDrill1
-is_public: true
-experience: 50
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 50
 
 license.id: cc-sa-4.0
 license.owner.email: edwards@cs.vt.edu
@@ -36,7 +34,7 @@ Change the code below so that instead of turning left three times and jumping, t
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 import java.util.ArrayList;
 public class syntax1 {
@@ -75,19 +73,21 @@ public class syntax1 {
     }
 }
 ----------
+[]
     
 
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 andy.turnLeft();
 andy.turnLeft();
 andy.turnLeft();
 andy.jump();
 ----------
+[]
 
-[assets.test.files]
-format: java/junit
+[.assets.test.files]
+type: text/x-java
 content:----------
 import codeworkout.CodeWorkoutTest;
 public class syntax1Test extends CodeWorkoutTest {
@@ -111,3 +111,4 @@ public class syntax1Test extends CodeWorkoutTest {
 
 }
 ----------
+[]

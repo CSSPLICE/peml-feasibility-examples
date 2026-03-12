@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/917/practice?workout_id=1402
+exercise_id: CS1114_Week4SyntaxDrill_1
 
 title: CodeWorkout While Loops with Relational Operators 1
-external_id: CS1114_Week4SyntaxDrill_1
-is_public: true
-experience: 50
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 50
 
 license.id: cc-sa-4.0
 license.owner.email: edwards@cs.vt.edu
@@ -24,7 +22,7 @@ Change the conditon so that the jeroo will only hop five times instead.
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 import student.micro.jeroo.Jeroo;
 import student.micro.jeroo.RelativeDirection;
@@ -70,8 +68,9 @@ public class syntax1 {
 
 }
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 public void question1(CountingJeroo imani)
 {
@@ -81,9 +80,10 @@ public void question1(CountingJeroo imani)
     }
 }
 ----------
+[]
 
-[assets.test.files]
-format: java/junit
+[.assets.test.files]
+type: text/x-java
 content:----------
 import codeworkout.CodeWorkoutTest;
 import codeworkout.Description;
@@ -104,3 +104,4 @@ public class syntax1Test extends CodeWorkoutTest  {
     }
 }
 ----------
+[]

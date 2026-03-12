@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/468/practice?workout_id=680
+exercise_id: cw-x51
 
 title: Generics - Generic Method 2
-external_id: cw-x51
-is_public: true
-experience: 10
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 10
 
 license.id: cc-sa-4.0
 license.owner.email: edwards@cs.vt.edu
@@ -25,15 +23,16 @@ Complete the method to analyze String, Character, and Double.
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 public class Answer <E>
 {
  ___
 }
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 public String whatAmI(E e){
     //.getClass() returns the
@@ -52,19 +51,21 @@ public String whatAmI(E e){
     }
 }
 ----------
+[]
 
 
-[assets.test.files]
-format: text/csv-unquoted
-pattern.actual: subject.whatAmI({{e}})
+[.assets.test.files]
+type: text/x-unquoted-csv
+pattern.method_call: whatAmI({{e}})
 content:----------
-e,expected,description
-"1",""Integer"",example
-""(╯°□°）╯︵ ┻━┻)"",""String""
-""┬─┬ノ( º _ ºノ)"",""String""
-""Boring String Example"",""String""
-"'c'",""Character""
-"2.2",""Double""
-"new Object()",""Who knows!""
+e, expected, description
+1, "Integer", example
+"(╯°□°）╯︵ ┻━┻)", "String"
+"┬─┬ノ( º _ ºノ)", "String"
+"Boring String Example", "String"
+'c', "Character"
+2.2, "Double"
+new Object(), "Who knows!"
 ----------
+[]
 

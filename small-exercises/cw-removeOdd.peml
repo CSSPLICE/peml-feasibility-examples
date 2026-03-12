@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/595/practice?workout_id=759
+exercise_id: ITSC1213_removeOdd
 
 title: removeOdd
-external_id: ITSC1213_removeOdd
-is_public: true
-experience: 20
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 20
 
 license.id: cc-sa-4.0
 license.owner.email: lcao2@uncc.edu
@@ -23,7 +21,7 @@ You must modify the given list.
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 import java.util.ArrayList;
 public class ArrayListProblem
@@ -31,18 +29,20 @@ public class ArrayListProblem
    ___
 }
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 public void removeOdd(ArrayList list)
 {
    ___
 }
 ----------
+[]
 
 
-[assets.test.files]
-format: java/junit
+[.assets.test.files]
+type: text/x-java
 content:----------
 // static tests:
 // keyword:new,prohibited,static:screening
@@ -116,4 +116,5 @@ public class ArrayListProblemTest extends CodeWorkoutTest{
     }
 }
 ----------
+[]
 

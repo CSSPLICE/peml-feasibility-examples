@@ -23,7 +23,8 @@ Claim: for all natural numbers $n$,
       $$
 ----------
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
+[]
 [.content]
 
 blockid: starter
@@ -40,7 +41,6 @@ display: Base case: At $n=0$, $\sum_{j=0}^n 2(-7)^j = 2$ and $\frac{1-(-7)^{n+1}
 blockid: base2
 display: Base case: At $n=0$, $\sum_{j=0}^n 2(-7)^j = 2$. So the base case $P(0)$ holds.
 feedback: Wrong choice
-[]
 
 blockid: IH
 [.pickone]
@@ -50,7 +50,6 @@ feedback: Wrong choice.
 
 blockid: IH2
 display: Inductive Hypothesis: Suppose that $P(n):$ $\sum_{j=0}^n 2(-7)^j = \frac{1-(-7)^{n+1}}{4}$ holds for $n=0,1,...,k$.
-[]
 
 blockid: IS
 [.pickone]
@@ -60,7 +59,6 @@ feedback: Wrong choice
 
 blockid: IS2
 diplay: Inductive Step: We need to show that $P(k+1):$ $\sum_{j=0}^{k+1} 2(-7)^j = \frac{1-(-7)^{k+2}}{4}$ holds.
-[]
 
 blockid: left
 display: The left hand side is $\sum_{j=0}^{k+1} 2(-7)^j = \sum_{j=0}^k 2(-7)^j + 2(-7)^{k+1}$"> The left hand side is $\sum_{j=0}^{k+1} 2(-7)^j = \sum_{j=0}^k 2(-7)^j + 2(-7)^{k+1}$.
@@ -73,14 +71,11 @@ feedback: Wrong choice
 
 blockid: useIH2
 By the inductive hypothesis we have $\sum_{j=0}^k 2(-7)^j = \frac{1-(-7)^{k+1}}{4}$. So then substituting we get $\frac{1-(-7)^{k+1}}{4} + 2(-7)^{k+1}$ $= \frac{1-(-7)^{k+1} + 8(-7)^{k+1}}{4}$ $= \frac{1+7(-7)^{k+1}}{4}$ which simplifies to $= \frac{1-(-7)^{k+2}}{4}$
-[]
 
 blockid: final
 display: So $\sum_{j=0}^{k+1} 2(-7)^j = \frac{1-(-7)^{k+2}}{4}$, which was what we needed to show.
-[]
-[]
 
-[assets.test.files]
+[.assets.test.files]
 content:----------
 starter:
 predicate: starter

@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/851/practice?workout_id=1342
+exercise_id: edu.vt.cs.1114.jeroo_turn_method
 
 title: CodeWorkout Jeroo turn() method
-external_id: edu.vt.cs.1114.jeroo_turn_method
-is_public: true
-experience: 50
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 50
 
 license.id: cc-sa-4.0
 license.owner.email: edwards@cs.vt.edu
@@ -23,7 +21,7 @@ correct methods fr a `Jeroo`.
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 import java.util.ArrayList;
 import student.micro.jeroo.*;
@@ -50,19 +48,21 @@ public class Answer extends Jeroo {
     }
 }
 ----------
+[]
     
 
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 jeroo.hop();
 jeroo.turnLeft();
 jeroo.hop();
 jeroo.turnRight();
 ----------
+[]
 
-[assets.test.files]
-format: java/junit
+[.assets.test.files]
+type: text/x-java
 content:----------
 import codeworkout.*;
 public class AnswerTest extends CodeWorkoutTest {
@@ -94,3 +94,4 @@ public class AnswerTest extends CodeWorkoutTest {
 }
 
 ----------
+[]

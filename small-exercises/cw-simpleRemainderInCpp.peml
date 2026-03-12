@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/695/practice?workout_id=955
+exercise_id: chico_simpleRemainder
 
 title: Sorting - Simple Remainder in C++
-external_id: chico_simpleRemainder
-is_public: true
-experience: 50
-language_list: C++
+vendor.codeworkout.is_public: true
+difficulty: 50
 
 license.id: cc-sa-4.0
 license.owner.email: ayaan@vt.edu
@@ -21,7 +19,7 @@ is divided by the variable denominator and store the result in the variable rema
 [systems]
 language: cpp
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 class Remainder
 {
@@ -29,8 +27,9 @@ class Remainder
     ___
 };
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 int remainder()
 {
@@ -45,13 +44,15 @@ int remainder()
     return remainder;
 }
 ----------
+[]
 
 
-[assets.test.files]
-format: text/csv-unquoted
-pattern.actual: subject.remainder()
+[.assets.test.files]
+type: text/x-unquoted-csv
+pattern.method_call: remainder()
 content:----------
-expected,description
+expected, description
 5
 ----------
+[]
 

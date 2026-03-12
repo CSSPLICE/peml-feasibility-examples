@@ -24,7 +24,8 @@ instructions:----------
 Write a function to swap two array elements by reordering the lines.
 ----------
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
+[]
 [.content]
 blockid: fixed
 display:----------
@@ -40,7 +41,6 @@ display: int temp = arr[i];
 blockid: onea
 display: int temp = arr[j];
 feedback: This was the wrong choice.
-[]
 
 blockid: two
 display: arr[i] = arr[j];
@@ -54,12 +54,10 @@ feedback: This line should not appear in the answer.
 
 blockid: fixed
 display: }
-[]
-[]
 
 # The dependency for blocks "onea" and "four" are -1, meaning
 # that they are distractors and should not appear in the solution.
-[assets.test.files]
+[.assets.test.files]
 content:----------
 one:
 onea: -1

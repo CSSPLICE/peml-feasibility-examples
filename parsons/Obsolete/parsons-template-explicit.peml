@@ -20,15 +20,15 @@ instructions:----------
 
 [systems]
 language: C++ [SOME LANGUAGE REQUIRED FOR EXECUTE TYPE]
-[]
 
-[assets.code.wrapper.files] [REQUIRED FOR EXECUTE TYPE]
+[.assets.code.wrapper.files] [REQUIRED FOR EXECUTE TYPE]
 content:----------
+[]
 [CODE HERE]
 ----------
-[]
 
-[assets.code.starter.files] [ALWAYS REQUIRED]
+[.assets.code.starter.files] [ALWAYS REQUIRED]
+[]
 [.content]
 {BLOCKS GO HERE: This should consist of one or more BLOCKID objects}
 
@@ -38,20 +38,18 @@ code: <Executed code> [OPTIONAL: If provided in an EXECUTE type, then
                        this gets executed instead of what is in "display:"]
 indent: 1 [OPTIONAL: indent level. If any tags have indent, then all must.]
 depends: One or more <BLOCKID> or -1 (for blocks not in solution) or leave blank (for blocks with no prereq)
-[]
-[]
 
-[assets.test.files] [REQUIRED FOR EXECUTE TYPE]
-format: text/csv-unquoted
+[.assets.test.files] [REQUIRED FOR EXECUTE TYPE]
+type: text/x-unquoted-csv
 pattern.actual: [IS THIS NEEDED?]
 content:----------
-expected,description
+expected, description
+[]
 [PUT TESTS HERE]
 ----------
-[]
 
-[assets.test.files] [REQUIRED FOR DAG TYPE]
+[.assets.test.files] [REQUIRED FOR DAG TYPE]
 content:----------
+[]
 [PUT DAG HERE]
 ----------
-[]

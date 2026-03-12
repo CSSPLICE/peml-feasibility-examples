@@ -8,14 +8,12 @@
 # Derived from jsParsons
 # https://github.com/js-parsons/js-parsons/blob/master/examples/hello-parson-noindent-CW.html
 
-exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/hello-parson-noindent-execute-CW.peml
+exercise_id: JSparsons-hello-parson
 
 title: Your First Parsons Problem -- Execute
 author: Cliff Shaffer (from js-Parsons, converted to PEML)
-external_id: JSparsons-hello-parson
-is_public: true
-experience: 40
-language_list: Python
+vendor.codeworkout.is_public: true
+difficulty: 40
 
 license.id: MIT
 license.owner.name: Cliff Shaffer
@@ -30,22 +28,23 @@ instructions:----------
 
 [systems]
 language: Python
+
+[.assets.code.wrapper.files]
+content:----------
+___
+----------
 []
 
-[assets.code.wrapper.files]
+[.assets.code.starter.files]
 content:----------
 ___
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.test.files]
+type: text/x-unquoted-csv
 content:----------
-___
-----------
-
-[assets.test.files]
-format: text/csv-unquoted
-content:----------
-input,expected,description
-,"""Hello\nParsons\nProblems!""",example
+input, expected, description
+, "Hello\nParsons\nProblems!", example
 ----------
 []

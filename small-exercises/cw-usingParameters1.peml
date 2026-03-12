@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/841/practice?workout_id=1334
+exercise_id: CS1114_Week2SyntaxDrill6
 
 title: CodeWorkout Using Parameters 1
-external_id: CS1114_Week2SyntaxDrill6
-is_public: true
-experience: 50
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 50
 
 license.id: cc-sa-4.0
 license.owner.email: admin@codeworkout.org
@@ -38,7 +36,7 @@ Using the methods defined above, set age to 42 and name to "Peter".
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 public class syntax6to7 {
     public static class Person{
@@ -78,17 +76,19 @@ public class syntax6to7 {
 
 }
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 public void setAgeAndName(Person p) {
    ___
 }
 ----------
+[]
 
 
-[assets.test.files]
-format: java/junit
+[.assets.test.files]
+type: text/x-java
 content:----------
 import codeworkout.CodeWorkoutTest;
 public class syntax6to7Test extends CodeWorkoutTest {
@@ -107,4 +107,5 @@ public class syntax6to7Test extends CodeWorkoutTest {
   }
 }
 ----------
+[]
 

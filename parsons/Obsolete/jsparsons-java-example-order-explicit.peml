@@ -20,7 +20,8 @@ instructions:----------
 Construct code by reordering and indenting the lines.
 ----------
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
+[]
 [.content]
 blockid: one
 display: for (int i=0;i<3;i++) {
@@ -41,10 +42,8 @@ indent: 1
 blockid: five
 display: }
 indent: 0
-[]
-[]
 
-[assets.test.files]
+[.assets.test.files]
 content:----------
 one:
 two: one

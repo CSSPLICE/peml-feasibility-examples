@@ -1,8 +1,7 @@
 title: Modeling a Microwave Oven
 external_id: peml-ex-program2
-is_public: true
-experience: 25
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 25
 
 license.id: cc-sa-4.0
 license.owner.email: edwards@cs.vt.edu

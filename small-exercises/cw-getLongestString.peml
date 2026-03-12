@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/592/practice?workout_id=759
+exercise_id: ITSC1213_get_longest_string
 
 title: getLongestString
-external_id: ITSC1213_get_longest_string
-is_public: true
-experience: 10
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 10
 
 license.id: cc-sa-4.0
 license.owner.email: lcao2@uncc.edu
@@ -25,7 +23,7 @@ return “once”
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 import java.util.ArrayList;
 public class ArrayListProblem
@@ -33,24 +31,27 @@ public class ArrayListProblem
    ___
 }
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 public String getLongestString(ArrayList list)
 {
    ___
 }
 ----------
+[]
 
 
-[assets.test.files]
-format: text/csv-unquoted
-pattern.actual: subject.getLongestString({{list}})
+[.assets.test.files]
+type: text/x-unquoted-csv
+pattern.method_call: getLongestString({{list}})
 content:----------
-list,expected,description
-"new java.util.ArrayList(){{add(""once"");add(""upon"");add(""a"");add(""time"");}}","""once""",example
-"new java.util.ArrayList(){{add(""four"");add(""and"");add(""years"");add(""ago"");}}","""years"""
-"new java.util.ArrayList(){{add(""greetings"");add(""hello"");add(""welcome"");add(""byebye"");}}","""greetings""",hidden
-"new java.util.ArrayList(){{add(""Mexico"");add(""Germany"");add(""France"");add(""Neitherland"");}}","""Neitherland""",hidden
+list, expected, description
+new java.util.ArrayList(){{add("once");add("upon");add("a");add("time");}}, "once", example
+new java.util.ArrayList(){{add("four");add("and");add("years");add("ago");}}, "years"
+new java.util.ArrayList(){{add("greetings");add("hello");add("welcome");add("byebye");}}, "greetings", hidden
+new java.util.ArrayList(){{add("Mexico");add("Germany");add("France");add("Neitherland");}}, "Neitherland", hidden
 ----------
+[]
 

@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/854/practice?workout_id=1342
+exercise_id: edu.vt.cs.1114.jeroo_instantiation
 
 title: CodeWorkout Jeroo Instantiation 
-external_id: edu.vt.cs.1114.jeroo_instantiation
-is_public: true
-experience: 50
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 50
 
 license.id: cc-sa-4.0
 license.owner.email: edwards@cs.vt.edu
@@ -25,7 +23,7 @@ with 2 flowers.
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 import student.micro.jeroo.CompassDirection;
 import static student.micro.jeroo.CompassDirection.*;
@@ -51,11 +49,12 @@ public class Answer {
   }
 }
 ----------
+[]
     
 
 
-[assets.code.starter.files]
-format: java/junit
+[.assets.code.starter.files]
+type: text/x-java
 content:----------
 import codeworkout.*;
 import student.micro.jeroo.CompassDirection;
@@ -80,3 +79,4 @@ public class AnswerTest extends CodeWorkoutTest {
     }
 }
 ----------
+[]

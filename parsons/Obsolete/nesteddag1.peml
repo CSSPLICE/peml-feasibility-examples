@@ -16,7 +16,8 @@ Associate each test with its corresponding work, but you can do the
 tests in any order.
 ----------
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
+[]
 [.content]
 blockid: caseA
 display: if (testA) {
@@ -45,25 +46,20 @@ display:----------
   doCstuff();
 }
 ----------
-[]
-[]
 
 # Specify the nested DAG.
 # This defines three sub-dags, all of which have no listed dependency
 # (meaning their roots have no prereqs, so they can go in any order).
-[assets.test.files]
+[.assets.test.files]
 content:----------
+[]
 [DAG]
 caseA:
 stuffA: caseA
-[]
 [DAG]
 caseB:
 stuffA: caseB
-[]
 [DAG]
 caseC:
 stuffA: caseC
-[]
 ----------
-[]

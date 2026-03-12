@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/836/practice?workout_id=1334
+exercise_id: CS1114_Week2SyntaxDrill1
 
 title: CodeWorkout Parameter Practice 1
-external_id: CS1114_Week2SyntaxDrill1
-is_public: true
-experience: 50
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 50
 
 license.id: cc-sa-4.0
 license.owner.email: admin@codeworkout.org
@@ -27,7 +25,7 @@ Call `add3Ints` and pass the numbers 4, 10, and 9 as parameters.
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 public class Syntax1to3 {
     private int aVal;
@@ -59,15 +57,17 @@ public class Syntax1to3 {
 
 }
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 ___
 ----------
+[]
 
 
-[assets.test.files]
-format: java/junit
+[.assets.test.files]
+type: text/x-java
 content:----------
 import codeworkout.CodeWorkoutTest;
 public class Syntax1to3Test extends CodeWorkoutTest {
@@ -90,4 +90,5 @@ public class Syntax1to3Test extends CodeWorkoutTest {
   }
 }
 ----------
+[]
 

@@ -19,7 +19,8 @@ instructions:----------
 **Your task**: Construct a Python program that prints strings "Hello", "Parsons", and "Problems" on their own lines. You can get feedback on your current solution with the feedback button. You should construct your program by dragging and dropping the lines to the solution area on the right.
 ----------
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
+[]
 [.content]
 blockid: one
 display: print('Hello')
@@ -29,11 +30,9 @@ display: print('Parsons')
 
 blockid: three
 display: print('Problems!')
-[]
-[]
 
 # A (trivial) DAG -- there is only one acceptable order
-[assets.test.files]
+[.assets.test.files]
 content:----------
 one:
 two: one

@@ -20,15 +20,14 @@ instructions:----------
 
 [systems]
 language: C++ [SOME LANGUAGE REQUIRED FOR EXECUTE TYPE]
-[]
 
-[assets.code.wrapper.files] [REQUIRED FOR EXECUTE TYPE]
+[.assets.code.wrapper.files] [REQUIRED FOR EXECUTE TYPE]
 content:----------
+[]
 [CODE HERE]
 ----------
-[]
 
-[assets.code.blocks.content] [ALWAYS REQUIRED]
+[.assets.code.blocks.content] [ALWAYS REQUIRED]
 {BLOCKS GO HERE: This should consist of one or more BLOCKID objects}
 
 blockid: <name>
@@ -39,11 +38,11 @@ indent: 1 [OPTIONAL: indent level. If any tags have indent, then all must.]
 depends: One or more <BLOCKID> or -1 (for blocks not in solution) or leave blank (for blocks with no prereq)
 []
 
-[assets.test.files] [REQUIRED FOR EXECUTE TYPE]
-format: text/csv-unquoted
+[.assets.test.files] [REQUIRED FOR EXECUTE TYPE]
+type: text/x-unquoted-csv
 pattern.actual: [IS THIS NEEDED?]
 content:----------
-expected,description
+expected, description
+[]
 [PUT TESTS HERE]
 ----------
-[]

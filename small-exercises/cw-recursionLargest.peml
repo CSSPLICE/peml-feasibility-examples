@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/263/practice?workout_id=46
+exercise_id: RecC-Largest
 
 title: Recursion Programming Exercise: Largest
-external_id: RecC-Largest
-is_public: true
-experience: 10
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 10
 
 license.id: cc-sa-4.0
 license.owner.email: sallyhamouda@gmail.com
@@ -28,15 +26,16 @@ array. \n
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 public class  RecCLargest
 {
     ___
 }
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 public int largest(int[] numbers, int index) {
     if <<Missing base case>>
@@ -44,17 +43,19 @@ public int largest(int[] numbers, int index) {
     return Math.max(numbers[index], largest(numbers, index-1));
 }
 ----------
+[]
 
 
-[assets.test.files]
-format: text/csv-unquoted
-pattern.actual: subject.largest({{nums}}, {{index}})
+[.assets.test.files]
+type: text/x-unquoted-csv
+pattern.method_call: largest({{nums}}, {{index}})
 content:----------
-nums,index,expected,description
-"new int [] {2, 4, 8}",2,8,example
-"new int [] {7, 7, 7}",2,7
-"new int [] {5}",0,5
-"new int [] {10, 4, 8}",2,10
-"new int [] {6, 23, 5}",2,23,hidden
+nums, index, expected, description
+new int [] {2, 4, 8}, 2, 8, example
+new int [] {7, 7, 7}, 2, 7
+new int [] {5}, 0, 5
+new int [] {10, 4, 8}, 2, 10
+new int [] {6, 23, 5}, 2, 23, hidden
 ----------
+[]
 

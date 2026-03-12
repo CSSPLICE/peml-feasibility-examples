@@ -1,10 +1,8 @@
-exercise_id: https://codeworkout.cs.vt.edu/gym/exercises/571/practice?workout_id=759
+exercise_id: ITSC1213_has_odd
 
 title: hasOdd
-external_id: ITSC1213_has_odd
-is_public: true
-experience: 10
-language_list: Java
+vendor.codeworkout.is_public: true
+difficulty: 10
 
 license.id: cc-sa-4.0
 license.owner.email: lcao2@uncc.edu
@@ -23,32 +21,35 @@ true. If the array contains 0 element, the method returns false.
 [systems]
 language: Java
 
-[assets.code.wrapper.files]
+[.assets.code.wrapper.files]
 content:----------
 public class ArrayProblem
 {
    ___
 }
 ----------
+[]
 
-[assets.code.starter.files]
+[.assets.code.starter.files]
 content:----------
 public boolean hasOdd(int[] nums)
 {
    ___
 }
 ----------
+[]
 
 
-[assets.test.files]
-format: text/csv-unquoted
-pattern.actual: subject.hasOdd({{nums}})
+[.assets.test.files]
+type: text/x-unquoted-csv
+pattern.method_call: hasOdd({{nums}})
 content:----------
-nums,expected,description
-"new int[] {12, 7, 8, 25, 3}",true,example
-"new int[] {1}",true
-"new int[] {}",false
-"new int[] {2, 4, 6}",false
-"new int[] {1, 3, 2, 7, 8, 9, 10}",true
+nums, expected, description
+new int[] {12, 7, 8, 25, 3}, true, example
+new int[] {1}, true
+new int[] {}, false
+new int[] {2, 4, 6}, false
+new int[] {1, 3, 2, 7, 8, 9, 10}, true
 ----------
+[]
 
