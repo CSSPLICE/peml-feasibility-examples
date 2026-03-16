@@ -39,7 +39,7 @@ display: print(a)
 blockid: three
 display: else
 
-blockid four
+blockid: four
 display: print(b)
 []
 
