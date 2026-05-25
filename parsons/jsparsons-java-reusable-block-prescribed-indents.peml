@@ -50,7 +50,6 @@ indent: 0
 blockid: four
 display: }
 reusable: true
-indent: 0
 []
 
 [.assets.test.files]
