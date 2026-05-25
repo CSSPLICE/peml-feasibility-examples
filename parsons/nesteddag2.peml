@@ -1,7 +1,4 @@
 # Demonstration of order grading that requires DAG nesting.
-# There are three "if" tests that can go in any order. But the
-# contents of the associated block has to appear immediately after its
-# test.
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/nesteddag2.peml
 
@@ -12,18 +9,23 @@ license.owner.name: Cliff Shaffer
 license.owner.email: shaffer@vt.edu
 
 tags.topics: PEML Demo Parsons Problem
-tags.style: parsons, order
+
+settings.grader.type: order
+settings.indent.active: true
+settings.indent.mode: free
+settings.indent.max_indents: 1
 
 instructions:----------
 Associate each test with its corresponding work, but you can do the
 tests in any order.
 ----------
 
-[.assets.code.blocks.content]
+[systems]
+language: java
 
+[.assets.code.blocks.content]
 blockid: testAblock
 depends:
-[]
 [.blocklist]
 blockid: caseA
 display: if (testA) {
@@ -35,6 +37,7 @@ display:----------
 }
 ----------
 depends: caseA
+[]
 
 blockid: testBblock
 depends:
@@ -49,6 +52,7 @@ display:----------
 }
 ----------
 depends: caseB
+[]
 
 blockid: testCblock
 depends:
@@ -63,3 +67,6 @@ display:----------
 }
 ----------
 depends: caseC
+[]
+[]
+[]
