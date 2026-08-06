@@ -50,19 +50,27 @@ display: Define two transformations.
 depends: choose
 
 blockid: t1
-display: Describe a polynomial-time algorithm that takes an arbitrary instance <b>I</b> of A to an instance <b>I′</b> of X.
+pickone: true
 depends: trans
+[.blocklist]
+blockid: one
+display: Describe a polynomial-time algorithm that takes an arbitrary instance <b>I</b> of A to an instance <b>I′</b> of X.
 
 blockid: d1
 display: Describe a polynomial-time algorithm that takes an arbitrary instance <b>I</b> of X to an instance <b>I′</b> of A.
 depends: -1
+[]
 
 blockid: t2
-display: Describe a polynomial-time transformation from the solution for <b>I'</b> in problem X (call it <b>SLN'</b>) to <b>SLN</b> such that <b>SLN</b> is the solution for <b>I</b> in problem A.
+pickone: true
 depends: trans
+[.blocklist]
+blockid: two
+display: Describe a polynomial-time transformation from the solution for <b>I'</b> in problem X (call it <b>SLN'</b>) to <b>SLN</b> such that <b>SLN</b> is the solution for <b>I</b> in problem A.
 
 blockid: d2
 display: Describe a polynomial-time transformation from the solution for <b>I'</b> in problem A (call it <b>SLN'</b>) to <b>SLN</b> such that <b>SLN</b> is the solution for <b>I</b> in problem X.
 depends: -1
+[]
 []
 []

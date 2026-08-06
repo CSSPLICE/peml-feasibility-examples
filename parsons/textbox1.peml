@@ -51,7 +51,9 @@ indent: 1
 []
 
 [.assets.test.files]
-type: text/csv-unquoted
+type: text/x-unquoted-csv
+template:
+    assertEquals({{expected}}, {{actual}});
 content:----------
 expected
 2
