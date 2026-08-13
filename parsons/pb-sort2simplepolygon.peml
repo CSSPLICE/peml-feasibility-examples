@@ -1,0 +1,59 @@
+# Reduction of sorting to simple polygon proof
+
+exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-sort2simplepolygon.peml
+
+title: Reduction of SORTING to SIMPLE POLYGON
+author: Cliff Shaffer
+license.id: MIT
+license.owner.name: Cliff Shaffer
+license.owner.email: shaffer@vt.edu
+
+tags.topics: PEML reduction
+
+settings.grader.type: order
+
+instructions:----------
+Show the steps to prove that the SORTING problem can be reduced to the SIMPLE POLYGON problem.
+----------
+
+[systems]
+language: natural
+
+[.assets.code.blocks.content]
+blockid: start
+display: Start with an input instance to SORTING (an array of records).
+depends:
+
+blockid: d1
+display: Start with an input instance to SIMPLE POLYGON (an array of points).
+depends: -1
+
+blockid: t1
+display: Define a transformation that converts an arbitrary instance of SORTING to some instance of SIMPLE POLYGON.
+depends: start
+
+blockid: d3
+display: Define a transformation that converts an arbitrary instance of SIMPLE POLYGON to some instance of SORTING.
+depends: -1
+
+blockid: pairingin
+display: Feed to SIMPLE POLYGON the following array of points: For each record to SORTING with value $x_i$, replace it with a point of value $(x_i, \sqrt{M^2 - x_i^2})$ where $M$ is the maximum value in the original array to be sorted.
+depends: t1
+
+blockid: pairing
+display: Compute SIMPLE POLYGON on its input. The result is <b>SLN'</b>, an array of points that form a simple polygon.
+depends: pairingin
+
+blockid: t2
+display: Convert <b>SLN'</b> to array <b>SLN</b>, the solution to SORTING, by finding the index in <b>SLN'</b> with the smallest $x$ value. Starting from that index, take all of the points in order (cycling around at the end of the array).
+depends: pairing
+
+blockid: finish
+display: Return SLN, the solution to SORTING.
+depends: t2
+
+blockid: d4
+display: Return SLN, the solution to PAIRING.
+depends: -1
+[]
+[]
