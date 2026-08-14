@@ -9,7 +9,7 @@
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/jsparsons-java-example-pseudo-execute.peml
 
-title: Simple js-parsons Java example assignment - execute
+title: Simple js-parsons Pseudocode example - execute
 author: Cliff Shaffer (from js-Parsons, converted to PEML)
 license.id: MIT
 license.owner.name: Cliff Shaffer
@@ -22,7 +22,7 @@ settings.indent.active: true
 settings.indent.mode: prescribed
 
 instructions:----------
-Construct code by reordering and indenting the lines.
+Construct code by reordering and indenting the lines to print out "I am a Java program" 3 times.
 ----------
 
 [systems]
@@ -36,7 +36,7 @@ content:----------
 
 [.assets.code.blocks.content]
 blockid: one
-display: for (int i=0;i<3;i++) {
+display: for (int i = 0; i < 3; i++) {
 code: for i in range(3):
 indent: 0
 
@@ -51,7 +51,7 @@ code: print('am ', end='')
 indent: 1
 
 blockid: four
-display: System.out.print("a Java program ");
+display: System.out.println("a Java program");
 code: print('a Java program ', end='')
 indent: 1
 

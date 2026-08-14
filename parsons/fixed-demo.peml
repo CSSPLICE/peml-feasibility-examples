@@ -12,12 +12,9 @@ tags.topics: PEML Demo Parsons Problem
 tags.style: parsons
 
 settings.grader.type: order
-settings.indent.active: true
-settings.indent.mode: free
-settings.indent.max_indents: 1
 
 instructions:----------
-Put the blocks **in** the proper order.
+Put the blocks in the proper order.
 ----------
 
 # Note that the DAG implied by the depends tags

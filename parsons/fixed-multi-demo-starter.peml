@@ -13,9 +13,6 @@ license.owner.email: shaffer@vt.edu
 tags.topics: PEML Demo Parsons Problem
 
 settings.grader.type: order
-settings.indent.active: true
-settings.indent.mode: free
-settings.indent.max_indents: 1
 
 instructions:----------
 Put the blocks in the proper order.
@@ -61,7 +58,7 @@ Random Group 1 Block 2
 depends: randomg1b1
 
 blockid: randomg1b3
-display: Random Group 1 Block 3: the third block in the first group
+display: Random Group 1 Block 3: the **third** block in the first group
 depends: randomg1b2
 
 blockid: fixed
@@ -85,7 +82,8 @@ depends: randomg2b1
 blockid: randomg2b3
 display:----------
 Random Group 2 Block 3
-This is the final adjustable block.
+  This is the final
+  adjustable block. It has a very long line at the end that ought to span multiple display lines.
 ----------
 depends: randomg2b2
 []

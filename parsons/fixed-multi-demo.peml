@@ -3,7 +3,7 @@
 
 exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/fixed-multi-demo.peml
 
-title: Fixed Block Demo #2: Multi-lines
+title: Fixed Block Demo #3: Multi-lines
 author: Cliff Shaffer
 license.id: MIT
 license.owner.name: Cliff Shaffer
@@ -12,8 +12,6 @@ license.owner.email: shaffer@vt.edu
 tags.topics: PEML Demo Parsons Problem
 
 settings.grader.type: order
-settings.indent.active: true
-settings.indent.mode: free
 
 instructions:----------
 Put the blocks in the proper order.
