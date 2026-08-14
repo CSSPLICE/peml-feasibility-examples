@@ -1,0 +1,66 @@
+# NP-completeness proof: 3SAT is NP-Complete
+# Simplified version that requires only a standard DAG.
+
+
+exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-Clique2IS-DAG.peml
+
+title: Clique to Independent Set (Simplified)
+author: Cliff Shaffer
+license.id: MIT
+license.owner.name: Cliff Shaffer
+license.owner.email: shaffer@vt.edu
+
+tags.topics: PEML NP-completeness
+
+settings.grader.type: order
+
+instructions:----------
+Show a proof that 3-Satisfiability (3SAT) is NP-complete.
+----------
+
+[systems]
+language: natural
+
+[.assets.code.blocks.content]
+
+blockid: inNP
+display: 1) Show that 3SAT is in NP.
+depends:
+
+blockid: algorithm
+display: Nondeterministically guess truth values for all of the variables. If these truth values yield an equation that is satisfied, then return YES. Otherwise return NO.
+depends: inNP
+
+blockid: d1
+display: Try all possible combinations of setting truth values for each variable in the expression in turn. If any one of them yields a satified equation, then return YES. Otherwise return NO.
+depends: -1
+
+blockid: NPhard
+display: 2) Show that 3SAT is NP-hard by using a reduction of known NP-complete problem SAT to 3SAT.
+depends: algorithm
+
+blockid: d3
+display: 2) Show that 3SAT is NP-hard by using a reduction of 3SAT to known NP-complete problem SAT.
+depends: -1
+
+blockid: starthard
+display: Show transformations to reduce SAT to 3SAT.
+depends: NPhard
+
+blockid: d2
+display: Show transformations to reduce 3SAT to SAT.
+depends: -1
+
+blockid: dbackwards
+display: The transformation is a null operation since any instance of 3SAT is also an instance of SAT.
+depends: -1
+
+blockid: reduce
+display: To reduce a SAT input instance $I$ to a 3SAT input instance $I'$, convert each clause of $I$ to an equivalent series of clauses that contain exactly 3 literals. We will ignore the long, drawn-out details for how this is done.
+depends: starthard
+
+blockid: t2
+display: Accept the output $SOL'$ from 3SAT on input $I'$ as the solution $SOL$ for SAT.
+depends: reduce
+[]
+[]
