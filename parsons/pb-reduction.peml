@@ -43,6 +43,6 @@ depends: transform
 
 blockid: finish
 display: Transform **SLN'** to the solution of **I**, known as **SLN**. Note that **SLN** must in fact be the correct solution for **I** for the reduction to be acceptable.
-depends: transform
+depends: algorithm
 []
 []
