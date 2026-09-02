@@ -41,11 +41,11 @@ display: Feed to SIMPLE POLYGON the following array of points: For each record t
 depends: t1
 
 blockid: pairing
-display: Compute SIMPLE POLYGON on its input. The result is <b>SLN'</b>, an array of points that form a simple polygon.
+display: Compute SIMPLE POLYGON on its input. The result is **SLN'**, an array of points that form a simple polygon.
 depends: pairingin
 
 blockid: t2
-display: Convert <b>SLN'</b> to array <b>SLN</b>, the solution to SORTING, by finding the index in <b>SLN'</b> with the smallest $x$ value. Starting from that index, take all of the points in order (cycling around at the end of the array).
+display: Convert **SLN'** to array **SLN**, the solution to SORTING, by finding the index in **SLN'** with the smallest $x$ value. Starting from that index, take all of the points in order (cycling around at the end of the array).
 depends: pairing
 
 blockid: finish

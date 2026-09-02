@@ -21,7 +21,7 @@ settings.indent.active: true
 settings.indent.mode: prescribed
 
 instructions:----------
-Construct code by reordering and indenting the lines.
+Construct code to print "I am a Java program" by reordering and indenting the lines.
 ----------
 
 [systems]
@@ -29,7 +29,7 @@ language: java
 
 [.assets.code.blocks.content]
 blockid: one
-display: for (int i=0;i<3;i++) {
+display: for (int i = 0; i < 3; i++) {
 indent: 0
 
 blockid: two
@@ -41,7 +41,7 @@ display: System.out.print("am ");
 indent: 1
 
 blockid: four
-display: System.out.print("a Java program ");
+display: System.out.println("a Java program ");
 indent: 1
 
 blockid: five

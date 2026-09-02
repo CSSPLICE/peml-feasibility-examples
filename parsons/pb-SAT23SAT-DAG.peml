@@ -2,9 +2,9 @@
 # Simplified version that requires only a standard DAG.
 
 
-exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-Clique2IS-DAG.peml
+exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/pb-SAT23SAT-DAG.peml
 
-title: Clique to Independent Set (Simplified)
+title: Prove that 3-Satisfiability is NP-Complete
 author: Cliff Shaffer
 license.id: MIT
 license.owner.name: Cliff Shaffer
@@ -39,7 +39,7 @@ blockid: NPhard
 display: 2) Show that 3SAT is NP-hard by using a reduction of known NP-complete problem SAT to 3SAT.
 depends: algorithm
 
-blockid: d3
+blockid: d2
 display: 2) Show that 3SAT is NP-hard by using a reduction of 3SAT to known NP-complete problem SAT.
 depends: -1
 
@@ -47,20 +47,20 @@ blockid: starthard
 display: Show transformations to reduce SAT to 3SAT.
 depends: NPhard
 
-blockid: d2
+blockid: d3
 display: Show transformations to reduce 3SAT to SAT.
 depends: -1
 
 blockid: dbackwards
-display: The transformation is a null operation since any instance of 3SAT is also an instance of SAT.
+display: The transformations are both null operations since any instance of 3SAT is also an instance of SAT.
 depends: -1
 
-blockid: reduce
-display: To reduce a SAT input instance $I$ to a 3SAT input instance $I'$, convert each clause of $I$ to an equivalent series of clauses that contain exactly 3 literals. We will ignore the long, drawn-out details for how this is done.
+blockid: t1
+display: To reduce a SAT input instance **I** to a 3SAT input instance **I'**, convert each clause of **I** to an equivalent series of clauses that contain exactly 3 literals. We will ignore the long, drawn-out details for how this is done.
 depends: starthard
 
 blockid: t2
-display: Accept the output $SOL'$ from 3SAT on input $I'$ as the solution $SOL$ for SAT.
-depends: reduce
+display: Accept the output **SOL'** from 3SAT on input **I'** as the solution **SOL** for SAT.
+depends: t1
 []
 []
