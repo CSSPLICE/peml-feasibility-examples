@@ -51,7 +51,7 @@ display: print(b)
 [.assets.test.files]
 type: text/x-unquoted-csv
 content:----------
-expected
+stdout
 2
 ----------
 []

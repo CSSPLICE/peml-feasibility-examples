@@ -10,12 +10,18 @@ license.owner.name: Sean Rothenberger
 license.owner.email: seanr06@vt.edu
 
 tags.topics: order grading, reusable blocks
-tags.style: parsons, order, indent
+
+settings.grader.type: execute
+settings.indent.active: true
+settings.indent.mode: prescribed
 
 instructions:----------
 Construct code by reordering and indenting the lines.
 You MUST reuse the `}` block twice to complete the program.
 ----------
+
+[systems]
+language: java
 
 [.assets.code.blocks.content]
 blockid: one
@@ -35,4 +41,5 @@ blockid: four
 display: }
 reusable: true
 indent: 0
+[]
 []
