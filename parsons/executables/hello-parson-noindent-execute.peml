@@ -44,7 +44,7 @@ display: print('Problems!')
 [.assets.test.files]
 type: text/x-unquoted-csv
 content:----------
-expected
+stdout
 Hello\nParsons\nProblems!
 ----------
 []
