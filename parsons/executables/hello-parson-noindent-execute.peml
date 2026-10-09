@@ -24,11 +24,6 @@ instructions:----------
 [systems]
 language: Python
 
-[.assets.code.wrapper.files]
-content:----------
-    ___
-----------
-[]
 
 [.assets.code.blocks.content]
 blockid: one
@@ -45,7 +40,7 @@ display: print('Problems!')
 type: text/x-unquoted-csv
 content:----------
 stdout
-Hello\nParsons\nProblems!
+Hello\nParsons\nProblems!\n
 ----------
 []
 []
