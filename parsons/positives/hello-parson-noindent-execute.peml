@@ -24,6 +24,11 @@ instructions:----------
 [systems]
 language: Python
 
+[.assets.code.wrapper.files]
+content:----------
+___
+----------
+[]
 
 [.assets.code.blocks.content]
 blockid: one

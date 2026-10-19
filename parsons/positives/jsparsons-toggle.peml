@@ -34,7 +34,7 @@ ___
 
 [.assets.code.blocks.content]
 blockid: one1
-display: if ``a`b`c`` ``<`>`>=`` b
+display: if ``a`b`c`` ``<`>`>=`` b:
 indent: 0
 
 blockid: two
@@ -42,7 +42,7 @@ display: print(a)
 indent: 1
 
 blockid: three
-display: else
+display: else:
 indent: 0
 
 blockid: four
@@ -53,8 +53,8 @@ indent: 1
 [.assets.test.files]
 type: text/x-unquoted-csv
 content:----------
-expected
-2
+stdout
+2\n
 ----------
 []
 []

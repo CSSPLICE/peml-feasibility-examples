@@ -30,7 +30,7 @@ language: Python
 
 [.assets.code.wrapper.files]
 content:----------
-    ___
+___
 ----------
 []
 
@@ -52,18 +52,19 @@ indent: 1
 
 blockid: four
 display: System.out.println("a Java program");
-code: print('a Java program ', end='')
+code: print('a Java program', end='')
 indent: 1
 
 blockid: five
 display: }
+code: #empty
 indent: 0
 []
 
 [.assets.test.files]
 type: text/x-unquoted-csv
 content:----------
-expected
+stdout
 I am a Java program I am a Java program I am a Java program
 ----------
 []

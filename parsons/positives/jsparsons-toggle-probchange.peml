@@ -1,11 +1,11 @@
 # Simple example of a problem with toggles (places where the student
 # has to select from a fixed choice what to put in a box in a block).
-# The toggle delimiter is defined for one block.
+# The toggle delimiter is defined for the whole problem.
 # This is a Python example with code execution.
 # Derived from jsParsons
 # https://github.com/js-parsons/js-parsons/blob/master/examples/jsparsons-toggle.html
 
-exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/jsparsons-toggle-blockchange.peml
+exercise_id: https://github.com/CSSPLICE/peml-feasibility-examples/blob/main/parsons/jsparsons-toggle-probchange.peml
 
 title: Print min value
 license.id: MIT
@@ -33,30 +33,27 @@ ___
 ----------
 []
 
+assets.code.blocks.delimiter: \
+
 [.assets.code.blocks.content]
 blockid: one1
-delimiter: \
-display: if \\a\b\c\\ \\<\>\>=\\ b
-indent: 0
+display: if \\a\b\c\\ \\<\>\>=\\ b:
 
 blockid: two
 display: print(a)
-indent: 1
 
 blockid: three
-display: else
-indent: 0
+display: else:
 
 blockid: four
 display: print(b)
-indent: 0
 []
 
 [.assets.test.files]
 type: text/x-unquoted-csv
 content:----------
 stdout
-2
+2\n
 ----------
 []
 []
