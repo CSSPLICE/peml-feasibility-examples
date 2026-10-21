@@ -26,7 +26,6 @@ language: java
 [.assets.code.blocks.content]
 blockid: testAblock
 depends:
-[]
 [.blocklist]
 blockid: caseA
 display: if (testA) {

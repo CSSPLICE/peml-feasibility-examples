@@ -26,7 +26,7 @@ language: natural
 [.assets.code.blocks.content]
 
 blockid: inNP
-display: Show that INDEPENDENT SET is in NP.
+display: 1) Show that INDEPENDENT SET is in NP.
 depends:
 
 blockid: inNPblock
@@ -43,12 +43,12 @@ depends: -1
 blockid: NPhardblock
 [.blocklist]
 blockid:NPhard
-display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
+display: 2) Show that INDEPENDENT SET is NP-hard by using a reduction
 of known NP-comlete problem CLIQUE to IS.
 depends:inNPblock
 
 blockid: d3
-display: 2. Show that INDEPENDENT SET is NP-hard by using a reduction
+display: 2) Show that INDEPENDENT SET is NP-hard by using a reduction
 of IS to known NP-complete problem CLIQUE.
 depends: -1
 []
